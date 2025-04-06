@@ -1,3 +1,3 @@
-# AngularPortifolio
+# Angular-portifolio
 
 ### Projeto em construção
