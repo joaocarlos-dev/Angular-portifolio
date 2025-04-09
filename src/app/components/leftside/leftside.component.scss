@@ -27,3 +27,22 @@
     font-size: clamp(0.8rem, 1.2vw, 2rem);
     text-align: center;
 }
+
+.left-column-header{
+    font-size: clamp(1.2rem, 1vw, 6rem);
+    color: inherit;
+    width: 100%; // Garante que o header ocupa toda a largura
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.left-column-profile-icons{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding-top: 50px;
+    font-size: clamp(1rem, 4vw, 8rem);
+}

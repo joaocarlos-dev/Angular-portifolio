@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { HeaderComponent } from '../../shared/header/header.component';
 
 @Component({
   selector: 'app-leftside',
-  imports: [],
+  imports: [HeaderComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './leftside.component.html',
-  styleUrl: './leftside.component.scss'
+  styleUrl: './leftside.component.scss',
 })
-export class LeftsideComponent {
-
-}
+export class LeftsideComponent {}
