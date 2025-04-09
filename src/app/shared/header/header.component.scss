@@ -1,0 +1,14 @@
+.header {
+    display: flex;
+    flex-direction: column;;
+    align-items: start; 
+    gap: 5px;
+    font-size: clamp(1rem, 1.5vw, 6rem);
+    a {
+        text-decoration: none;
+        &:hover {
+            color: rgb(192, 223, 253);
+            transition-duration: 1s;
+        }
+    }
+}
