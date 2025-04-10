@@ -34,7 +34,10 @@
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        height: 30px;
+        height: 45px;
+    }
+    .hamburger i{
+        font-size: clamp(1.6rem, 3vw, 8rem);
     }
     .header{
         background-color: #313455;
