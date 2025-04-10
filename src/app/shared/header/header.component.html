@@ -1,4 +1,10 @@
-<header>
+<!-- Hamburguer - só aparece no mobile -->
+<div class="hamburger" (click)="toggleMenu()">
+  <i class="fa fa-bars"></i>
+</div>
+
+<!-- Menu -->
+<header *ngIf="isMenuOpen || isDesktop">
   <div class="header">
     <div class="icon-about-shared-div">
       <i class="fa fa-user-circle" aria-hidden="true"></i>
