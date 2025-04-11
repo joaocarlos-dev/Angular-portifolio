@@ -1,30 +1,50 @@
+// header.component.ts
 import { CommonModule } from '@angular/common';
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
+import { trigger, transition, style, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-header',
-
+  standalone: true,
   imports: [CommonModule],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss',
+  styleUrls: ['./header.component.scss'],
+  animations: [
+    trigger('slideInOut', [
+      transition(':enter', [
+        style({ transform: 'translateY(-100%)', opacity: 0 }),
+        animate(
+          '300ms ease-out',
+          style({ transform: 'translateY(0)', opacity: 1 })
+        ),
+      ]),
+      transition(':leave', [
+        animate(
+          '250ms ease-in',
+          style({ transform: 'translateY(-100%)', opacity: 0 })
+        ),
+      ]),
+    ]),
+  ],
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
   isMenuOpen = false;
   isDesktop = true;
 
-  ngOnInit(): void {
-    this.onResize(); // Chama na inicialização
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    this.isDesktop = window.innerWidth > 768;
+    if (this.isDesktop) this.isMenuOpen = false;
   }
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
   }
 
-  @HostListener('window:resize')
-  onResize() {
-    this.isDesktop = window.innerWidth > 768;
-    if (this.isDesktop) {
-      this.isMenuOpen = false; // fecha menu se virou desktop
+  // Fecha o menu ao clicar em um item (adicione ao template se necessário)
+  closeMenu() {
+    if (!this.isDesktop) {
+      this.isMenuOpen = false;
     }
   }
 }
