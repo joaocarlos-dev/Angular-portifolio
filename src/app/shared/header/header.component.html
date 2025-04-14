@@ -1,12 +1,10 @@
-<!-- header.component.html -->
-<div class="hamburger" (click)="toggleMenu()">
-  <i class="fa fa-bars"></i>
+<div class="hamburger">
+  <i class="fa fa-bars" (click)="toggleMenu()"></i>
 </div>
 
 <div *ngIf="isMenuOpen || isDesktop" [@slideInOut] class="menu-container">
   <header>
     <div class="header">
-      <!-- Itens do menu (mantido igual) -->
       <div class="icon-about-shared-div">
         <i class="fa fa-user-circle" aria-hidden="true"></i>
         <a>About</a>

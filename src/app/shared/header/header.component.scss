@@ -34,14 +34,6 @@
         justify-content: flex-end;
         align-items: center;
         height: 45px;
-        cursor: pointer;
-        transition: transform 0.3s ease;
-        position: relative;
-        z-index: 1001;
-      
-        &:active {
-          transform: scale(0.95);
-        }
       
         i {
           font-size: 1.6rem;

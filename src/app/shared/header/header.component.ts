@@ -1,6 +1,12 @@
 // header.component.ts
-import { CommonModule } from '@angular/common';
-import { Component, HostListener } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import {
+  Component,
+  HostListener,
+  Inject,
+  OnInit,
+  PLATFORM_ID,
+} from '@angular/core';
 import { trigger, transition, style, animate } from '@angular/animations';
 
 @Component({
@@ -27,21 +33,34 @@ import { trigger, transition, style, animate } from '@angular/animations';
     ]),
   ],
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   isMenuOpen = false;
-  isDesktop = true;
+  isDesktop = false; // Define valor inicial seguro
+
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
   @HostListener('window:resize', ['$event'])
   onResize() {
-    this.isDesktop = window.innerWidth > 768;
-    if (this.isDesktop) this.isMenuOpen = false;
+    if (isPlatformBrowser(this.platformId)) {
+      this.isDesktop = window.innerWidth > 768;
+      if (this.isDesktop) this.isMenuOpen = false;
+    }
+  }
+
+  ngOnInit(): void {
+    this.checkDesktop();
+  }
+
+  private checkDesktop() {
+    if (isPlatformBrowser(this.platformId)) {
+      this.isDesktop = window.innerWidth > 768;
+    }
   }
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
   }
 
-  // Fecha o menu ao clicar em um item (adicione ao template se necessário)
   closeMenu() {
     if (!this.isDesktop) {
       this.isMenuOpen = false;
