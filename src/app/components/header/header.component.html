@@ -1,0 +1,30 @@
+<div class="hamburger">
+  <i class="fa fa-bars" (click)="toggleMenu()"></i>
+</div>
+
+<div *ngIf="isMenuOpen || isDesktop" [@slideInOut] class="menu-container">
+  <header>
+    <div class="header">
+      <div class="icon-about-shared-div">
+        <i class="fa fa-user-circle" aria-hidden="true"></i>
+        <a href="#header">About</a>
+      </div>
+      <div class="icon-about-shared-div">
+        <i class="fa fa-briefcase" aria-hidden="true"></i>
+        <a>Experiences</a>
+      </div>
+      <div class="icon-about-shared-div">
+        <i class="fa fa-code" aria-hidden="true"></i>
+        <a>Projects</a>
+      </div>
+      <div class="icon-about-shared-div">
+        <i class="fa fa-envelope-open-o" aria-hidden="true"></i>
+        <a>Contact me</a>
+      </div>
+      <div class="icon-about-shared-div">
+        <i class="fa fa-file-text" aria-hidden="true"></i>
+        <a>Resume</a>
+      </div>
+    </div>
+  </header>
+</div>

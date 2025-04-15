@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
+import { AboutComponent } from '../../shared/about/about.component';
 
 @Component({
   selector: 'app-rightside',
-  imports: [],
+  imports: [AboutComponent],
   templateUrl: './rightside.component.html',
-  styleUrl: './rightside.component.scss'
+  styleUrl: './rightside.component.scss',
 })
-export class RightsideComponent {
-
-}
+export class RightsideComponent {}
