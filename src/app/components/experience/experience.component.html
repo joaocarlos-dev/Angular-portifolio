@@ -12,7 +12,7 @@
       <span class="duration">{{ exp.duration }}</span>
     </div>
 
-    <div class="experience-description" *ngIf="exp.expanded">
+    <div class="experience-description" [class.active]="exp.expanded">
       <p>{{ exp.description }}</p>
     </div>
   </div>

@@ -8,17 +8,14 @@
   }
   
   .experience-card {
-    width: 45%;
+    width: 100%;
     background-color: #5d639e;
     border-radius: 10px;
     padding: 16px;
     cursor: pointer;
     transition: box-shadow 0.3s ease;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  
-    &:hover {
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    }
+
   }
   
   .experience-header {
@@ -32,24 +29,28 @@
     margin: 0;
     font-size: clamp(0.8rem, 1rem, 1.5rem);
     font-weight: 600;
-    color: #caceff;
+    color: #daddff;
   }
   
   .job-title {
     margin: 4px 0 0;
     font-size: clamp(0.6rem, 0.8rem, 1.5rem);
-    color: #caceff;
+    color: #daddff;
   }
   
   .duration {
     font-size: clamp(0.5rem, 0.7rem, 1.5rem);
-    color: #caceff;
+    color: #daddff;
   }
   
   .experience-description {
-    margin-top: 12px;
-    font-size: 0.95rem;
-    color: #ffffff;
-    line-height: 1.4;
-  }
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease-out;
+    padding: 0;
   
+    &.active {
+      max-height: 500px; // Valor maior que a altura máxima esperada
+      padding: 10px 0;
+    }
+  }

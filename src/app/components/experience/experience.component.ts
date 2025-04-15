@@ -36,6 +36,9 @@ export class ExperienceComponent {
   ];
 
   toggleDetails(index: number): void {
-    this.experiences[index].expanded = !this.experiences[index].expanded;
+    this.experiences = this.experiences.map((exp, i) => ({
+      ...exp,
+      expanded: i === index ? !exp.expanded : false,
+    }));
   }
 }
