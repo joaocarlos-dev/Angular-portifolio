@@ -1,1 +1,19 @@
-<p>experience works!</p>
+<div class="experience-content">
+  <div
+    class="experience-card"
+    *ngFor="let exp of experiences; let i = index"
+    (click)="toggleDetails(i)"
+  >
+    <div class="experience-header">
+      <div>
+        <h3 class="company-name">{{ exp.company }}</h3>
+        <p class="job-title">{{ exp.title }}</p>
+      </div>
+      <span class="duration">{{ exp.duration }}</span>
+    </div>
+
+    <div class="experience-description" *ngIf="exp.expanded">
+      <p>{{ exp.description }}</p>
+    </div>
+  </div>
+</div>

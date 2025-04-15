@@ -1,0 +1,55 @@
+.experience-content {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .experience-card {
+    width: 45%;
+    background-color: #5d639e;
+    border-radius: 10px;
+    padding: 16px;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  
+    &:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+  }
+  
+  .experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+  }
+  
+  .company-name {
+    margin: 0;
+    font-size: clamp(0.8rem, 1rem, 1.5rem);
+    font-weight: 600;
+    color: #caceff;
+  }
+  
+  .job-title {
+    margin: 4px 0 0;
+    font-size: clamp(0.6rem, 0.8rem, 1.5rem);
+    color: #caceff;
+  }
+  
+  .duration {
+    font-size: clamp(0.5rem, 0.7rem, 1.5rem);
+    color: #caceff;
+  }
+  
+  .experience-description {
+    margin-top: 12px;
+    font-size: 0.95rem;
+    color: #ffffff;
+    line-height: 1.4;
+  }
+  
