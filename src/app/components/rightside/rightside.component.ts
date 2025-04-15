@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AboutComponent } from '../../shared/about/about.component';
+import { AboutComponent } from '../about/about.component';
 
 @Component({
   selector: 'app-rightside',
