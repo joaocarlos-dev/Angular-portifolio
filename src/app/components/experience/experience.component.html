@@ -12,8 +12,14 @@
       <span class="duration">{{ exp.duration }}</span>
     </div>
 
-    <div class="experience-description" [class.active]="exp.expanded">
+    <div class="experience-description" *ngIf="exp.expanded" [@slideInOut]>
       <p>{{ exp.description }}</p>
+    </div>
+
+    <div class="arrow-toggle" [class.expanded]="exp.expanded">
+      <!-- Você pode usar uma fonte como Material Icons, ou SVG, ou só isso: -->
+      &#9660;
+      <!-- seta para baixo ▼ -->
     </div>
   </div>
 </div>

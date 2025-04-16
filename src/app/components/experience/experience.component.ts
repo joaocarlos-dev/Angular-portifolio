@@ -1,5 +1,14 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import {
+  trigger,
+  state,
+  style,
+  transition,
+  animate,
+} from '@angular/animations';
 
 interface Experience {
   company: string;
@@ -14,6 +23,33 @@ interface Experience {
   imports: [CommonModule],
   templateUrl: './experience.component.html',
   styleUrl: './experience.component.scss',
+  animations: [
+    trigger('slideInOut', [
+      transition(':enter', [
+        style({
+          height: '0px',
+          overflow: 'hidden',
+          opacity: 0,
+        }),
+        animate(
+          '300ms ease-out',
+          style({
+            height: '*',
+            opacity: 1,
+          })
+        ),
+      ]),
+      transition(':leave', [
+        animate(
+          '300ms ease-in',
+          style({
+            height: '0px',
+            opacity: 0,
+          })
+        ),
+      ]),
+    ]),
+  ],
 })
 export class ExperienceComponent {
   experiences: Experience[] = [
@@ -26,11 +62,10 @@ export class ExperienceComponent {
       expanded: false,
     },
     {
-      company: 'Fatec Ribeirão',
+      company: 'Unimed',
       title: 'Estagiário em Suporte',
       duration: '01/2023 - 05/2024',
-      description:
-        'Auxiliei na manutenção de sistemas e automatização de relatórios.',
+      description: 'Teste de texto',
       expanded: false,
     },
   ];
@@ -40,5 +75,6 @@ export class ExperienceComponent {
       ...exp,
       expanded: i === index ? !exp.expanded : false,
     }));
+    console.log(this.experiences[index].expanded);
   }
 }

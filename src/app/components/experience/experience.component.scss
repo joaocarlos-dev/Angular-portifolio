@@ -5,6 +5,8 @@
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 20px;
+    backface-visibility: hidden;
+
   }
   
   .experience-card {
@@ -13,9 +15,12 @@
     border-radius: 10px;
     padding: 16px;
     cursor: pointer;
-    transition: box-shadow 0.3s ease;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 
+    &:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      }
+      position: relative;
   }
   
   .experience-header {
@@ -45,12 +50,27 @@
   
   .experience-description {
     overflow: hidden;
-    max-height: 0;
-    transition: max-height 0.3s ease-out;
-    padding: 0;
+    padding: 0 16px;
+    transform: translateZ(0);  // Melhora a renderização
+    backface-visibility: hidden; // Elimina flicker em alguns navegadores
+  }
+
+  .arrow-toggle {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: #daddff;
+    color: #5d639e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    transition: transform 0.3s ease;
   
-    &.active {
-      max-height: 500px; // Valor maior que a altura máxima esperada
-      padding: 10px 0;
+    &.expanded {
+      transform: rotate(180deg);
     }
   }
