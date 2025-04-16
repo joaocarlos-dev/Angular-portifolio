@@ -51,8 +51,9 @@
   .experience-description {
     overflow: hidden;
     padding: 0 16px;
-    transform: translateZ(0);  // Melhora a renderização
-    backface-visibility: hidden; // Elimina flicker em alguns navegadores
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    color: #daddff;
   }
 
   .arrow-toggle {
