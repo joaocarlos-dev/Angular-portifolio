@@ -1,15 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import "tailwindcss";
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  font: inherit;
 }
 
 html, body {
@@ -39,4 +34,23 @@ p, h1, h2, h3, h4, h5, h6 {
 
 #root, app-root {
   isolation: isolate;
+}
+
+@layer utilities {
+  .text-fluid-h1 {
+    font-size: clamp(1.5rem, 3.5vw, 6rem);
+  }
+
+  .text-fluid-h2 {
+    font-size: clamp(1rem, 2vw, 2.5rem);
+  }
+
+  .text-fluid-p {
+    font-size: clamp(0.8rem, 1.2vw, 2rem);
+  }
+
+  .text-fluid-icons {
+    font-size: clamp(0.5rem, 2vw, 4rem);
+  }
+  
 }

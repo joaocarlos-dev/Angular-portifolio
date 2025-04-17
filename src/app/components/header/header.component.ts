@@ -21,13 +21,13 @@ import { trigger, transition, style, animate } from '@angular/animations';
         style({ transform: 'translateY(-100%)', opacity: 0 }),
         animate(
           '300ms ease-out',
-          style({ transform: 'translateY(0)', opacity: 1 })
+          style({ transform: 'translateY(0)', opacity: 1 }),
         ),
       ]),
       transition(':leave', [
         animate(
           '250ms ease-in',
-          style({ transform: 'translateY(-100%)', opacity: 0 })
+          style({ transform: 'translateY(-100%)', opacity: 0 }),
         ),
       ]),
     ]),
@@ -35,7 +35,7 @@ import { trigger, transition, style, animate } from '@angular/animations';
 })
 export class HeaderComponent implements OnInit {
   isMenuOpen = false;
-  isDesktop = false; // Define valor inicial seguro
+  isDesktop = false;
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
@@ -43,7 +43,6 @@ export class HeaderComponent implements OnInit {
   onResize() {
     if (isPlatformBrowser(this.platformId)) {
       this.isDesktop = window.innerWidth > 768;
-      if (this.isDesktop) this.isMenuOpen = false;
     }
   }
 
@@ -54,6 +53,7 @@ export class HeaderComponent implements OnInit {
   private checkDesktop() {
     if (isPlatformBrowser(this.platformId)) {
       this.isDesktop = window.innerWidth > 768;
+      this.isMenuOpen = this.isDesktop; // Mantém aberto em desktop
     }
   }
 

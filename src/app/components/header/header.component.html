@@ -1,30 +1,53 @@
-<div class="hamburger">
-  <i class="fa fa-bars" (click)="toggleMenu()"></i>
-</div>
+<div class="relative">
+  <!-- Ícone do menu hambúrguer (exibido apenas no mobile) -->
+  <div
+    class="hamburger flex items-center justify-end bg-blue-900 text-white pr-4 h-12 md:hidden"
+  >
+    <i class="fa fa-bars text-xl cursor-pointer" (click)="toggleMenu()"></i>
+  </div>
 
-<div *ngIf="isMenuOpen || isDesktop" [@slideInOut] class="menu-container">
-  <header>
-    <div class="header">
-      <div class="icon-about-shared-div">
-        <i class="fa fa-user-circle" aria-hidden="true"></i>
-        <a href="#header">About</a>
+  <!-- Menu Responsivo -->
+  <div
+    *ngIf="isMenuOpen || isDesktop"
+    [@slideInOut]
+    id="menu-container"
+    class="absolute top-12 left-0 w-full z-50 bg-blue-900 transform transition-transform duration-300 md:static md:w-auto md:flex md:gap-4 md:bg-transparent"
+  >
+    <header>
+      <div
+        class="header flex flex-col items-center gap-4 p-4 text-white md:flex-row md:items-start"
+      >
+        <div
+          class="icon-about-shared-div flex items-center gap-3 hover:bg-blue-700 p-3 rounded-md"
+        >
+          <i class="fa fa-user-circle"></i>
+          <a href="#header">About</a>
+        </div>
+        <div
+          class="icon-about-shared-div flex items-center gap-3 hover:bg-blue-700 p-3 rounded-md"
+        >
+          <i class="fa fa-briefcase"></i>
+          <a>Experiences</a>
+        </div>
+        <div
+          class="icon-about-shared-div flex items-center gap-3 hover:bg-blue-700 p-3 rounded-md"
+        >
+          <i class="fa fa-code"></i>
+          <a>Projects</a>
+        </div>
+        <div
+          class="icon-about-shared-div flex items-center gap-3 hover:bg-blue-700 p-3 rounded-md"
+        >
+          <i class="fa fa-envelope-open-o"></i>
+          <a>Contact me</a>
+        </div>
+        <div
+          class="icon-about-shared-div flex items-center gap-3 hover:bg-blue-700 p-3 rounded-md"
+        >
+          <i class="fa fa-file-text"></i>
+          <a>Resume</a>
+        </div>
       </div>
-      <div class="icon-about-shared-div">
-        <i class="fa fa-briefcase" aria-hidden="true"></i>
-        <a>Experiences</a>
-      </div>
-      <div class="icon-about-shared-div">
-        <i class="fa fa-code" aria-hidden="true"></i>
-        <a>Projects</a>
-      </div>
-      <div class="icon-about-shared-div">
-        <i class="fa fa-envelope-open-o" aria-hidden="true"></i>
-        <a>Contact me</a>
-      </div>
-      <div class="icon-about-shared-div">
-        <i class="fa fa-file-text" aria-hidden="true"></i>
-        <a>Resume</a>
-      </div>
-    </div>
-  </header>
+    </header>
+  </div>
 </div>
