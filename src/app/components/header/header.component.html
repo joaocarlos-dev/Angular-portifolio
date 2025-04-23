@@ -1,49 +1,29 @@
-<div class="relative">
-  <!-- Ícone do menu hambúrguer (exibido apenas no mobile) -->
-  <div
-    class="hamburger flex items-center justify-end bg-blue-900 text-white pr-4 h-12 md:hidden"
-  >
-    <i class="fa fa-bars text-xl cursor-pointer" (click)="toggleMenu()"></i>
+<div>
+  <div>
+    <i (click)="toggleMenu()"></i>
   </div>
 
   <!-- Menu Responsivo -->
-  <div
-    *ngIf="isMenuOpen || isDesktop"
-    [@slideInOut]
-    id="menu-container"
-    class="absolute top-12 left-0 w-full z-50 bg-blue-900 transform transition-transform duration-300 md:static md:w-auto md:flex md:gap-4 md:bg-transparent"
-  >
+  <div *ngIf="isMenuOpen || isDesktop" [@slideInOut] id="menu-container">
     <header>
-      <div
-        class="header flex flex-col items-center gap-4 p-4 text-white md:flex-row md:items-start"
-      >
-        <div
-          class="icon-about-shared-div flex items-center gap-3 hover:bg-blue-700 p-3 rounded-md"
-        >
+      <div>
+        <div>
           <i class="fa fa-user-circle"></i>
           <a href="#header">About</a>
         </div>
-        <div
-          class="icon-about-shared-div flex items-center gap-3 hover:bg-blue-700 p-3 rounded-md"
-        >
+        <div>
           <i class="fa fa-briefcase"></i>
           <a>Experiences</a>
         </div>
-        <div
-          class="icon-about-shared-div flex items-center gap-3 hover:bg-blue-700 p-3 rounded-md"
-        >
+        <div>
           <i class="fa fa-code"></i>
           <a>Projects</a>
         </div>
-        <div
-          class="icon-about-shared-div flex items-center gap-3 hover:bg-blue-700 p-3 rounded-md"
-        >
+        <div>
           <i class="fa fa-envelope-open-o"></i>
           <a>Contact me</a>
         </div>
-        <div
-          class="icon-about-shared-div flex items-center gap-3 hover:bg-blue-700 p-3 rounded-md"
-        >
+        <div>
           <i class="fa fa-file-text"></i>
           <a>Resume</a>
         </div>
