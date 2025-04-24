@@ -3,27 +3,26 @@
     <i (click)="toggleMenu()"></i>
   </div>
 
-  <!-- Menu Responsivo -->
-  <div *ngIf="isMenuOpen || isDesktop" [@slideInOut] id="menu-container">
+  <div>
     <header>
-      <div>
-        <div>
+      <div class="flex flex-col items-start gap-4">
+        <div class="flex items-center gap-2">
           <i class="fa fa-user-circle"></i>
-          <a href="#header">About</a>
+          <a>About</a>
         </div>
-        <div>
+        <div class="flex items-center gap-2">
           <i class="fa fa-briefcase"></i>
           <a>Experiences</a>
         </div>
-        <div>
+        <div class="flex items-center gap-2">
           <i class="fa fa-code"></i>
           <a>Projects</a>
         </div>
-        <div>
+        <div class="flex items-center gap-2">
           <i class="fa fa-envelope-open-o"></i>
           <a>Contact me</a>
         </div>
-        <div>
+        <div class="flex items-center gap-3">
           <i class="fa fa-file-text"></i>
           <a>Resume</a>
         </div>

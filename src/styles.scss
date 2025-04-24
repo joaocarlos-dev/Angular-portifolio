@@ -3,40 +3,29 @@
 
 @theme {
   --color-background: #313455;
+  --color-card-background: #1e2244;
+  --color-text-color: #cccee7;
+  --font-default-font: 'JetBrains Mono', monospace;
+  --text-font-title: clamp(1.5rem, 3vw, 6rem);
+  --text-font-subtitle: clamp(1rem,1.6vw,2.5rem);
+  --text-font-undersub: clamp(0.8rem,1.1vw,2rem);
+  --text-font-header: clamp(1.2rem,1.5vw,6rem);
+  --btn-icon-bg: #171a38;
+  --btn-icon-size: clamp(2rem, 3vw, 4rem);
+  --btn-icon-height: clamp(2.5rem, 3vw, 4rem);
+  --btn-icon-font: clamp(0.5rem, 2vw, 2rem);
+  --btn-icon-radius: 12px;
 }
 
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-html, body {
-  height: 100%;
-  font-family: 'JetBrains Mono', monospace;
-  font-weight: 100;
-}
-
-body {
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-img, picture, video, canvas, svg {
-  display: block;
-  max-width: 100%;
-}
-
-input, button, textarea, select {
-  font: inherit;
-}
-
-p, h1, h2, h3, h4, h5, h6 {
-  overflow-wrap: break-word;
-}
-
-#root, app-root {
-  isolation: isolate;
+@layer components {
+  .btn-icon {
+    background-color: var(--btn-icon-bg);
+    border: 1px solid var(--btn-icon-bg);
+    border-radius: var(--btn-icon-radius);
+    width: var(--btn-icon-size);
+    height: var(--btn-icon-height);
+    font-size: var(--btn-icon-font);
+    display: grid;
+    place-items: center;
+  }
 }
