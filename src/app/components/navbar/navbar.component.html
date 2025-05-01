@@ -1,12 +1,18 @@
 <nav
-  class="md:hidden bg-card-background text-text-color shadow p-4 rounded-[2vw]"
+  class="md:hidden bg-card-background text-text-color shadow p-4 rounded-[2vw] transition-all duration-300 ease-in-out"
 >
   <div class="flex items-center justify-between">
     <span class="text-font-title text-lg">João Henrique</span>
     <button (click)="toggleMenu()" class="text-2xl">&#9776;</button>
   </div>
 
-  <div *ngIf="isMenuOpen" class="mt-4 flex flex-col gap-3">
+  <div
+    [ngClass]="{
+      'max-h-96 opacity-100 mt-4': isMenuOpen,
+      'max-h-0 opacity-0 overflow-hidden': !isMenuOpen,
+    }"
+    class="transition-all duration-500 ease-in-out flex flex-col gap-3"
+  >
     <div class="flex flex-col items-start gap-4">
       <div class="flex items-center gap-2">
         <i class="fa fa-user-circle"></i>
@@ -16,7 +22,7 @@
         <i class="fa fa-briefcase"></i>
         <a>Experiences</a>
       </div>
-      <div class="flex items-cente<div>r gap-2">
+      <div class="flex items-center gap-2">
         <i class="fa fa-code"></i>
         <a>Projects</a>
       </div>
