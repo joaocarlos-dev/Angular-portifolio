@@ -1,21 +1,5 @@
-<div class="experience-content">
-  <div
-    class="experience-card"
-    *ngFor="let exp of experiences; let i = index"
-    (click)="toggleDetails(i)"
-  >
-    <div class="experience-header">
-      <div>
-        <h3 class="company-name">{{ exp.company }}</h3>
-        <p class="job-title">{{ exp.title }}</p>
-      </div>
-      <span class="duration">{{ exp.duration }}</span>
-    </div>
-
-    <div class="experience-description" *ngIf="exp.expanded" [@slideInOut]>
-      <p>{{ exp.description }}</p>
-    </div>
-
-    <div class="arrow-toggle" [class.expanded]="exp.expanded">&#9660;</div>
+<div class="w-full flex justify-center">
+  <div class="w-[90%]">
+    <app-experience-card></app-experience-card>
   </div>
 </div>

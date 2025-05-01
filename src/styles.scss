@@ -16,6 +16,8 @@
   --btn-icon-font: clamp(0.5rem, 2vw, 2rem);
   --btn-icon-radius: 12px;
   --btn-right-bg: #46486b;
+
+  --color-exp-bg: #595c85;
 }
 
 @layer components {
@@ -35,5 +37,11 @@
     border-radius: 1vw;
     width: clamp(0.5rem, 3.8vw, 6vw);
     height: clamp(0.5rem, 3.8vw, 6vw);;
+  }
+
+  .experience-card{
+    background-color: var(--color-exp-bg);
+    border-radius: 0.5vw;
+    height: fit-content;
   }
 }
