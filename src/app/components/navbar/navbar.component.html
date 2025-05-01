@@ -1,0 +1,32 @@
+<!-- NAVBAR MOBILE - visível apenas em sm -->
+<nav class="md:hidden bg-card-background text-text-color shadow p-4">
+  <div class="flex items-center justify-between">
+    <span class="text-font-title text-lg">João Henrique</span>
+    <button (click)="toggleMenu()" class="text-2xl">&#9776;</button>
+  </div>
+
+  <div *ngIf="isMenuOpen" class="mt-4 flex flex-col gap-3">
+    <div class="flex flex-col items-start gap-4">
+      <div class="flex items-center gap-2">
+        <i class="fa fa-user-circle"></i>
+        <a>About</a>
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="fa fa-briefcase"></i>
+        <a>Experiences</a>
+      </div>
+      <div class="flex items-cente<div>r gap-2">
+        <i class="fa fa-code"></i>
+        <a>Projects</a>
+      </div>
+      <div class="flex items-center gap-2">
+        <i class="fa fa-envelope-open-o"></i>
+        <a>Contact me</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <i class="fa fa-file-text"></i>
+        <a>Resume</a>
+      </div>
+    </div>
+  </div>
+</nav>
