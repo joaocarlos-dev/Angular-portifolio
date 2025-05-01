@@ -4,7 +4,7 @@ import { ExperienceComponent } from '../experience/experience.component';
 
 @Component({
   selector: 'app-rightside',
-  imports: [AboutComponent, ExperienceComponent],
+  imports: [],
   templateUrl: './rightside.component.html',
   styleUrl: './rightside.component.scss',
 })

@@ -15,10 +15,11 @@
   --btn-icon-height: clamp(2.5rem, 3vw, 4rem);
   --btn-icon-font: clamp(0.5rem, 2vw, 2rem);
   --btn-icon-radius: 12px;
+  --btn-right-bg: #46486b;
 }
 
 @layer components {
-  .btn-icon {
+  .left-btn-icon {
     background-color: var(--btn-icon-bg);
     border: 1px solid var(--btn-icon-bg);
     border-radius: var(--btn-icon-radius);
@@ -27,5 +28,12 @@
     font-size: var(--btn-icon-font);
     display: grid;
     place-items: center;
+  }
+
+  .right-btn{
+    background-color: var(--btn-right-bg);
+    border-radius: 1vw;
+    width: clamp(0.5rem, 3.8vw, 6vw);
+    height: clamp(0.5rem, 3.8vw, 6vw);;
   }
 }
