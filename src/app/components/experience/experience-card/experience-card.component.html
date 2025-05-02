@@ -4,10 +4,10 @@
   (click)="toggleCard(i)"
 >
   <div class="flex justify-between">
-    <div class="ml-3 flex items-center font-semibold">
+    <div class="ml-3 flex items-center font-bold">
       {{ card.title }}
     </div>
-    <div class="mr-3 font-semibold">
+    <div class="mr-3 font-bold">
       {{ card.time }}
     </div>
   </div>
@@ -20,6 +20,6 @@
     class="transition-all duration-500 ease-in-out flex flex-col ml-3"
   >
     <div class="font-semibold">{{ card.company }}</div>
-    <div>{{ card.content }}</div>
+    <div class="font-normal">{{ card.content }}</div>
   </div>
 </div>
