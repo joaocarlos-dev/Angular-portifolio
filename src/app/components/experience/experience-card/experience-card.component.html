@@ -1,3 +1,25 @@
-<div class="experience-card w-full flex justify-center">
-  Testewjehrkajshfkjashkjdfahdsdddkjh
+<div
+  *ngFor="let card of cards; let i = index"
+  class="experience-card w-full flex flex-col cursor-pointer"
+  (click)="toggleCard(i)"
+>
+  <div class="flex justify-between">
+    <div class="ml-3 flex items-center font-semibold">
+      {{ card.title }}
+    </div>
+    <div class="mr-3 font-semibold">
+      {{ card.time }}
+    </div>
+  </div>
+
+  <div
+    [ngClass]="{
+      'max-h-96 opacity-100 mt-4': card.isOpen,
+      'max-h-0 opacity-0 overflow-hidden': !card.isOpen,
+    }"
+    class="transition-all duration-500 ease-in-out flex flex-col ml-3"
+  >
+    <div class="font-semibold">{{ card.company }}</div>
+    <div>{{ card.content }}</div>
+  </div>
 </div>

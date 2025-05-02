@@ -17,7 +17,7 @@
   --btn-icon-radius: 12px;
   --btn-right-bg: #46486b;
 
-  --color-exp-bg: #595c85;
+  --color-exp-bg: #7074a1;
 }
 
 @layer components {
@@ -43,5 +43,6 @@
     background-color: var(--color-exp-bg);
     border-radius: 0.5vw;
     height: fit-content;
+    color: #171827;
   }
 }
