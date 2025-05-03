@@ -3,19 +3,13 @@
 >
   <div class="text-text-color text-[3vw]">!! PROJETO EM CONSTRUÇÃO !!</div>
 
-  <ng-container [ngSwitch]="visibleSection">
-    <div *ngSwitchCase="'about'" [@fadeInOut]="!isFadingOut">
-      <app-about></app-about>
-    </div>
+  <div *ngIf="visibleSection === 'about'" @fadeInOut>
+    <app-about></app-about>
+  </div>
 
-    <div
-      *ngSwitchCase="'experience'"
-      [@fadeInOut]="!isFadingOut"
-      class="w-full"
-    >
-      <app-experience></app-experience>
-    </div>
+  <div *ngIf="visibleSection === 'experience'" @fadeInOut class="w-full">
+    <app-experience></app-experience>
+  </div>
 
-    <!-- Adicione os outros aqui -->
-  </ng-container>
+  <!-- Adicione os outros da mesma forma -->
 </div>

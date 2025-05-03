@@ -30,21 +30,33 @@ export class MiddleContentComponent implements OnChanges {
     | 'contact'
     | 'resume' = 'about';
 
-  visibleSection = this.activeSection;
-  isFadingOut = false;
+  visibleSection:
+    | 'about'
+    | 'experience'
+    | 'projects'
+    | 'contact'
+    | 'resume'
+    | null = this.activeSection;
 
-  ngOnChanges(changes: SimpleChanges) {
+  animating = false;
+
+  ngOnChanges(changes: SimpleChanges): void {
     if (
       changes['activeSection'] &&
-      changes['activeSection'].currentValue !== this.visibleSection
+      changes['activeSection'].currentValue !== this.visibleSection &&
+      !this.animating
     ) {
-      this.isFadingOut = true;
+      this.animating = true;
 
-      // Aguarda o tempo da animação de fadeOut (500ms)
+      // Fase 1: faz fadeOut do conteúdo atual
+      this.visibleSection = null;
+
+      // Espera a animação de fadeOut terminar
       setTimeout(() => {
+        // Fase 2: mostra nova seção e dispara fadeIn
         this.visibleSection = this.activeSection;
-        this.isFadingOut = false;
-      }, 200);
+        this.animating = false;
+      }, 500); // deve ser o mesmo tempo do animate('500ms...')
     }
   }
 }
