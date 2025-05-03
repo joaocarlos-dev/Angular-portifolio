@@ -14,10 +14,10 @@ import { ExperienceComponent } from '../experience/experience.component';
     trigger('fadeInOut', [
       transition(':enter', [
         style({ opacity: 0 }),
-        animate('500ms ease-in-out', style({ opacity: 1 })),
+        animate('300ms ease-in-out', style({ opacity: 1 })),
       ]),
       transition(':leave', [
-        animate('500ms ease-in-out', style({ opacity: 0 })),
+        animate('300ms ease-in-out', style({ opacity: 0 })),
       ]),
     ]),
   ],
@@ -48,15 +48,12 @@ export class MiddleContentComponent implements OnChanges {
     ) {
       this.animating = true;
 
-      // Fase 1: faz fadeOut do conteúdo atual
       this.visibleSection = null;
 
-      // Espera a animação de fadeOut terminar
       setTimeout(() => {
-        // Fase 2: mostra nova seção e dispara fadeIn
         this.visibleSection = this.activeSection;
         this.animating = false;
-      }, 500); // deve ser o mesmo tempo do animate('500ms...')
+      }, 300);
     }
   }
 }
