@@ -2,16 +2,20 @@
   class="hidden md:flex bg-card-background h-full rounded-[2vw] flex-col items-center"
 >
   <div class="text-text-color text-[3vw]">!! PROJETO EM CONSTRUÇÃO !!</div>
-  <app-about
-    class="transition-opacity duration-500 ease-in-out opacity-100"
-    *ngIf="activeSection === 'about'"
-    @fadeInOut
-  ></app-about>
-  <div class="w-full">
-    <app-experience
-      class="transition-opacity duration-500 ease-in-out opacity-100"
-      *ngIf="activeSection === 'experience'"
-      @fadeInOut
-    ></app-experience>
-  </div>
+
+  <ng-container [ngSwitch]="visibleSection">
+    <div *ngSwitchCase="'about'" [@fadeInOut]="!isFadingOut">
+      <app-about></app-about>
+    </div>
+
+    <div
+      *ngSwitchCase="'experience'"
+      [@fadeInOut]="!isFadingOut"
+      class="w-full"
+    >
+      <app-experience></app-experience>
+    </div>
+
+    <!-- Adicione os outros aqui -->
+  </ng-container>
 </div>

@@ -1,33 +1,28 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { trigger, transition, style, animate } from '@angular/animations';
+import { CommonModule } from '@angular/common';
 import { AboutComponent } from '../about/about.component';
 import { ExperienceComponent } from '../experience/experience.component';
-import { CommonModule } from '@angular/common';
-import { trigger, transition, style, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-middle-content',
-  imports: [AboutComponent, ExperienceComponent, CommonModule],
+  standalone: true,
+  imports: [CommonModule, AboutComponent, ExperienceComponent],
   templateUrl: './middle-content.component.html',
   styleUrl: './middle-content.component.scss',
   animations: [
-    trigger('slideInOut', [
+    trigger('fadeInOut', [
       transition(':enter', [
-        style({ transform: 'translateX(100%)', opacity: 0 }),
-        animate(
-          '400ms ease-out',
-          style({ transform: 'translateX(0)', opacity: 1 }),
-        ),
+        style({ opacity: 0 }),
+        animate('500ms ease-in-out', style({ opacity: 1 })),
       ]),
       transition(':leave', [
-        animate(
-          '400ms ease-in',
-          style({ transform: 'translateX(-100%)', opacity: 0 }),
-        ),
+        animate('500ms ease-in-out', style({ opacity: 0 })),
       ]),
     ]),
   ],
 })
-export class MiddleContentComponent {
+export class MiddleContentComponent implements OnChanges {
   @Input() activeSection:
     | 'about'
     | 'experience'
@@ -35,7 +30,21 @@ export class MiddleContentComponent {
     | 'contact'
     | 'resume' = 'about';
 
-  setSection(section: typeof this.activeSection) {
-    this.activeSection = section;
+  visibleSection = this.activeSection;
+  isFadingOut = false;
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (
+      changes['activeSection'] &&
+      changes['activeSection'].currentValue !== this.visibleSection
+    ) {
+      this.isFadingOut = true;
+
+      // Aguarda o tempo da animação de fadeOut (500ms)
+      setTimeout(() => {
+        this.visibleSection = this.activeSection;
+        this.isFadingOut = false;
+      }, 200);
+    }
   }
 }
