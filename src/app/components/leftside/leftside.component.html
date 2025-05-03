@@ -3,10 +3,14 @@
   class="hidden md:flex bg-card-background h-full w-full rounded-[2vw] flex-col items-center text-text-color justify-between"
 >
   <div class="flex flex-col items-center text-center">
-    <p class="text-font-title">João Henrique</p>
-    <h2 class="text-font-subtitle">Full-stack Developer</h2>
+    <p class="text-font-title">{{ greetingText }}</p>
+    <h2 class="text-font-subtitle">{{ subtitleText }}</h2>
     <p class="text-font-undersub">
-      Hi! I’m João. A passionate software engineer.
+      {{
+        languageService.isPortuguese()
+          ? "Oi! Sou o João e sou desenvolvedor de software."
+          : "Hi! I’m João. A passionate software engineer."
+      }}
     </p>
   </div>
 
@@ -14,23 +18,23 @@
     <div class="flex flex-col items-start gap-4">
       <div class="header-button" (click)="onSectionClick('about')">
         <i class="fa fa-user-circle"></i>
-        <span>About</span>
+        <span>{{ aboutText }}</span>
       </div>
       <div class="header-button" (click)="onSectionClick('experience')">
         <i class="fa fa-briefcase"></i>
-        <span>Experiences</span>
+        <span>{{ experienceText }}</span>
       </div>
       <div class="header-button" (click)="onSectionClick('projects')">
         <i class="fa fa-code"></i>
-        <span>Projects</span>
+        <span>{{ projectsText }}</span>
       </div>
       <div class="header-button" (click)="onSectionClick('contact')">
         <i class="fa fa-envelope-open-o"></i>
-        <span>Contact me</span>
+        <span>{{ contactText }}</span>
       </div>
       <div class="header-button" (click)="onSectionClick('resume')">
         <i class="fa fa-file-text"></i>
-        <span>Resume</span>
+        <span>{{ resumeText }}</span>
       </div>
     </div>
   </div>
