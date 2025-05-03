@@ -1,25 +1,35 @@
 <div
   *ngFor="let card of cards; let i = index"
-  class="experience-card w-full flex flex-col cursor-pointer m-2"
+  class="w-full cursor-pointer m-2 p-4 bg-[--color-card-background] text-[#cccee7] rounded-[1vw] shadow-md border border-white/20 transition-transform hover:-translate-y-1 hover:shadow-lg"
   (click)="toggleCard(i)"
 >
-  <div class="flex justify-between">
-    <div class="ml-3 flex items-center font-semibold">
+  <!--Cabeçalho do card-->
+  <div class="flex justify-between items-center">
+    <div
+      class="text-[--text-font-title] text-[--color-text-color] font-semibold"
+    >
       {{ card.title }}
     </div>
-    <div class="mr-3 font-semibold">
+    <div
+      class="text-[--text-font-undersub] text-[--color-text-color] opacity-70 font-medium"
+    >
       {{ card.time }}
     </div>
   </div>
 
+  <!--Conteúdo do card-->
   <div
     [ngClass]="{
-      'max-h-96 opacity-100 mt-4': card.isOpen,
-      'max-h-0 opacity-0 overflow-hidden': !card.isOpen,
+      'max-h-96 opacity-100 mt-4 scale-100': card.isOpen,
+      'max-h-0 opacity-0 scale-95 overflow-hidden': !card.isOpen,
     }"
-    class="transition-all duration-500 ease-in-out flex flex-col ml-3"
+    class="transition-all duration-500 ease-in-out origin-top transform text-[--color-text-color]"
   >
-    <div class="font-semibold">{{ card.company }}</div>
-    <div class="font-normal">{{ card.content }}</div>
+    <div class="text-[--text-font-subtitle] font-semibold mb-1">
+      {{ card.company }}
+    </div>
+    <div class="text-[--text-font-undersub] opacity-85">
+      {{ card.content }}
+    </div>
   </div>
 </div>
