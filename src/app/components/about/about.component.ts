@@ -1,14 +1,23 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-about',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './about.component.html',
-  styleUrl: './about.component.scss',
+  styleUrls: ['./about.component.scss'],
 })
 export class AboutComponent {
-  about_text = `
-     Aliquam erat volutpat. Duis blandit faucibus accumsan. Nunc tempus, elit placerat feugiat scelerisque, augue purus lobortis orci, in hendrerit massa risus vitae nulla. Fusce quam dolor, vehicula nec nunc ut, volutpat lacinia ante. Vestibulum non fermentum quam. Etiam non mi et purus molestie bibendum.
-Pellentesque in tempor risus. Vivamus in orci velit. Nam finibus ipsum non sapien mollis, a maximus sem pharetra. Sed nec rutrum sapien, sit amet lobortis mi. Ut non elit vitae tellus mollis pharetra vitae quis mi. Duis suscipit massa turpis, vel hendrerit nibh auctor sollicitudin. Ut ut tortor vitae ex tincidunt ornare a non orci. Maecenas iaculis pulvinar condimentum. Ut in varius urna. Donec convallis tortor ut sollicitudin consequat. Ut vitae fermentum mi. Nam volutpat facilisis molestie. Suspendisse potenti. Nunc quis placerat enim. Suspendisse potenti. Ut lorem neque, imperdiet in augue eget, ullamcorper tincidun est.
+  greeting = `Hello, I'm João!`;
+
+  aboutText = `
+    I’m a graduate in Analysis and Systems Development from FATEC in Ribeirão Preto. Currently, I work as a Support Analyst and Developer at INOV.AI, a company that provides legal solutions based on artificial intelligence.
+
+    I have experience with Python, data analysis, and system failure prevention. I also work with technologies such as Kubernetes, MongoDB, and PostgreSQL, always aiming to deliver scalable and well-documented solutions.
+
+    I am passionate about solving problems, constantly seeking new challenges and opportunities to learn. Outside of work, I enjoy solving Rubik's Cube puzzles, participating in programming marathons, and playing the violin.
   `;
+
+  paragraphs = this.aboutText.split('\n').filter((p) => p.trim() !== '');
 }
