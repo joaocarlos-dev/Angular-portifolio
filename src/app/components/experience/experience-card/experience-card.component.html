@@ -3,7 +3,7 @@
   class="w-full cursor-pointer m-2 p-4 bg-[--color-card-background] text-[#cccee7] rounded-[1vw] shadow-md border border-white/20 transition-transform hover:-translate-y-1 hover:shadow-lg"
   (click)="toggleCard(i)"
 >
-  <!--Cabeçalho do card-->
+  <!-- Cabeçalho do card -->
   <div class="flex justify-between items-center">
     <div
       class="text-[--text-font-title] text-[--color-text-color] font-semibold"
@@ -17,7 +17,7 @@
     </div>
   </div>
 
-  <!--Conteúdo do card-->
+  <!-- Conteúdo do card -->
   <div
     [ngClass]="{
       'max-h-96 opacity-100 mt-4 scale-100': card.isOpen,
@@ -28,8 +28,18 @@
     <div class="text-[--text-font-subtitle] font-semibold mb-1">
       {{ card.company }}
     </div>
-    <div class="text-[--text-font-undersub] opacity-85">
+    <div class="text-[--text-font-undersub] opacity-85 mb-4">
       {{ card.content }}
+    </div>
+
+    <!-- Tecnologias usadas -->
+    <div class="flex flex-wrap gap-2 justify-start">
+      <div
+        *ngFor="let tech of card.technologies"
+        class="bg-[#4e527a] text-[--color-text-color] px-2 py-1 rounded-md text-[0.9vw] font-semibold"
+      >
+        {{ tech }}
+      </div>
     </div>
   </div>
 </div>
