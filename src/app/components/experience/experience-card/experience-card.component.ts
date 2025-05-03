@@ -10,40 +10,47 @@ import { Component } from '@angular/core';
 export class ExperienceCardComponent {
   cards = [
     {
-      title: 'Experiência A',
-      time: '24/02/2024',
-      company: 'Empresa1',
-      content: 'Fiz tal coisa bla bla bla 1',
-      technologies: ['Angular', 'TypeScript', 'Tailwind'],
+      title: 'Analista de Suporte e Desenvolvedor',
+      time: '09/2024 - Atual',
+      company: 'INOV.AI',
+      content: `Atuo na equipe de suporte e desenvolvimento em uma lawtech que entrega soluções 
+      com Inteligência Artificial no setor jurídico. Sou responsável pelo monitoramento de 
+      microsserviços, criação de automações para garantir a qualidade do produto e 
+      ações preventivas para identificar falhas antes que impactem o cliente. 
+      Mantenho e evoluo um bot do Telegram que monitora os serviços e sou responsável pela 
+      criação de uma aplicação para servir como base de conhecimentos e documentações
+      internas.`,
+      technologies: [
+        'Python',
+        'Angular',
+        'PostgreSQL',
+        'MongoDB',
+        'Kubernetes',
+        'ElasticSearch',
+      ],
       isOpen: false,
     },
     {
-      title: 'Experiência B',
-      time: '24/02/2024',
-      company: 'empresa2',
-      content: 'Fiz tal coisa bla bla bla 2',
-      technologies: ['React', 'Node.js', 'Docker'],
-      isOpen: false,
-    },
-    {
-      title: 'Experiência C',
-      time: '24/02/2024',
-      company: 'empresa2',
-      content: 'Fiz tal coisa bla bla bla 3',
-      technologies: ['Vue.js', 'Firebase', 'CSS'],
-      isOpen: false,
-    },
-    {
-      title: 'Experiência D',
-      time: '24/02/2024',
-      company: 'empresa2',
-      content: 'Fiz tal coisa bla bla bla 4',
-      technologies: ['Python', 'Django', 'Postgres'],
+      title: 'Suporte de Infraestrutura',
+      time: '10/2023 - 08/2024',
+      company: 'UNIMED',
+      content: `Atuei na manutenção da infraestrutura da empresa, incluindo máquinas, 
+      servidores e gerenciamento de domínio e GPOs. Automatizei relatórios empresariais 
+      utilizando Python e Selenium para apoiar a tomada de decisão.`,
+      technologies: ['Python', 'Selenium', 'Angular', 'Windows Server'],
       isOpen: false,
     },
   ];
 
   toggleCard(index: number) {
-    this.cards[index].isOpen = !this.cards[index].isOpen;
+    const isAlreadyOpen = this.cards[index].isOpen;
+
+    this.cards.forEach((card) => (card.isOpen = false));
+
+    if (!isAlreadyOpen) {
+      setTimeout(() => {
+        this.cards[index].isOpen = true;
+      }, 150);
+    }
   }
 }
