@@ -23,6 +23,20 @@ export class ExperienceCardComponent {
       content: 'Fiz tal coisa bla bla bla 2',
       isOpen: false,
     },
+    {
+      title: 'Experiência C',
+      time: '24/02/2024',
+      company: 'empresa2',
+      content: 'Fiz tal coisa bla bla bla 2',
+      isOpen: false,
+    },
+    {
+      title: 'Experiência D',
+      time: '24/02/2024',
+      company: 'empresa2',
+      content: 'Fiz tal coisa bla bla bla 2',
+      isOpen: false,
+    },
   ];
 
   toggleCard(index: number) {

@@ -2,8 +2,16 @@
   class="hidden md:flex bg-card-background h-full rounded-[2vw] flex-col items-center"
 >
   <div class="text-text-color text-[3vw]">!! PROJETO EM CONSTRUÇÃO !!</div>
-  <app-about></app-about>
+  <app-about
+    class="transition-opacity duration-500 ease-in-out opacity-100"
+    *ngIf="activeSection === 'about'"
+    @fadeInOut
+  ></app-about>
   <div class="w-full">
-    <app-experience></app-experience>
+    <app-experience
+      class="transition-opacity duration-500 ease-in-out opacity-100"
+      *ngIf="activeSection === 'experience'"
+      @fadeInOut
+    ></app-experience>
   </div>
 </div>

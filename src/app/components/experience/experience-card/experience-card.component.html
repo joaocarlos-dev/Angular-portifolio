@@ -1,13 +1,13 @@
 <div
   *ngFor="let card of cards; let i = index"
-  class="experience-card w-full flex flex-col cursor-pointer"
+  class="experience-card w-full flex flex-col cursor-pointer m-2"
   (click)="toggleCard(i)"
 >
   <div class="flex justify-between">
-    <div class="ml-3 flex items-center font-bold">
+    <div class="ml-3 flex items-center font-semibold">
       {{ card.title }}
     </div>
-    <div class="mr-3 font-bold">
+    <div class="mr-3 font-semibold">
       {{ card.time }}
     </div>
   </div>

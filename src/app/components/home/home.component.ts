@@ -5,9 +5,16 @@ import { MiddleContentComponent } from '../middle-content/middle-content.compone
 
 @Component({
   selector: 'app-home',
+  standalone: true,
   imports: [LeftsideComponent, RightsideComponent, MiddleContentComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
-  schemas: [],
 })
-export class HomeComponent {}
+export class HomeComponent {
+  activeSection: 'about' | 'experience' | 'projects' | 'contact' | 'resume' =
+    'about';
+
+  onSectionChange(section: typeof this.activeSection) {
+    this.activeSection = section;
+  }
+}

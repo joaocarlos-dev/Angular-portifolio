@@ -12,25 +12,25 @@
 
   <div class="flex justify-center w-full text-font-header">
     <div class="flex flex-col items-start gap-4">
-      <div class="flex items-center gap-2">
+      <div class="header-button" (click)="onSectionClick('about')">
         <i class="fa fa-user-circle"></i>
-        <a>About</a>
+        <span>About</span>
       </div>
-      <div class="flex items-center gap-2">
+      <div class="header-button" (click)="onSectionClick('experience')">
         <i class="fa fa-briefcase"></i>
-        <a>Experiences</a>
+        <span>Experiences</span>
       </div>
-      <div class="flex items-cente<div>r gap-2">
+      <div class="header-button" (click)="onSectionClick('projects')">
         <i class="fa fa-code"></i>
-        <a>Projects</a>
+        <span>Projects</span>
       </div>
-      <div class="flex items-center gap-2">
+      <div class="header-button" (click)="onSectionClick('contact')">
         <i class="fa fa-envelope-open-o"></i>
-        <a>Contact me</a>
+        <span>Contact me</span>
       </div>
-      <div class="flex items-center gap-3">
+      <div class="header-button" (click)="onSectionClick('resume')">
         <i class="fa fa-file-text"></i>
-        <a>Resume</a>
+        <span>Resume</span>
       </div>
     </div>
   </div>

@@ -1,7 +1,13 @@
 <div
   class="md:flex bg-background w-screen h-screen gap-4 p-4 font-default-font font-thin"
 >
-  <app-leftside class="w-[30%]"></app-leftside>
-  <app-middle-content class="w-[65%]"></app-middle-content>
+  <app-leftside
+    class="w-[30%]"
+    (sectionChanged)="onSectionChange($event)"
+  ></app-leftside>
+  <app-middle-content
+    class="w-[65%]"
+    [activeSection]="activeSection"
+  ></app-middle-content>
   <app-rightside class="w-[5%]"></app-rightside>
 </div>

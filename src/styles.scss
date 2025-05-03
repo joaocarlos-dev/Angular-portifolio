@@ -5,6 +5,7 @@
   --color-background: #313455;
   --color-card-background: #1e2244;
   --color-text-color: #cccee7;
+  --color-hover-background: #4e527a;
   --font-default-font: 'JetBrains Mono', monospace;
   --text-font-title: clamp(1.5rem, 3vw, 6rem);
   --text-font-subtitle: clamp(1rem,1.6vw,2.5rem);
@@ -45,4 +46,19 @@
     height: fit-content;
     color: #171827;
   }
+
+  .header-button {
+    border-radius: 1vw;
+    padding: 0.1rem 0.4rem;
+    transition: all 300ms ease-in-out;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+  
+    &:hover {
+      cursor: pointer;
+      background-color: var(--color-hover-background);
+    }
+  }
+  
 }
