@@ -14,30 +14,42 @@
   --btn-icon-bg: #171a38;
   --btn-icon-size: clamp(2rem, 3vw, 4rem);
   --btn-icon-height: clamp(2.5rem, 3vw, 4rem);
-  --btn-icon-font: clamp(0.5rem, 2vw, 2rem);
-  --btn-icon-radius: 12px;
+  --btn-icon-font: clamp(0.5rem, 3vw, 4rem);
+  --btn-icon-radius: 0.8vw;
   --btn-right-bg: #46486b;
-
   --color-exp-bg: #7074a1;
 }
 
 @layer components {
   .left-btn-icon {
-    background-color: var(--btn-icon-bg);
+    background-color: var(--btn-right-bg);
     border: 1px solid var(--btn-icon-bg);
     border-radius: var(--btn-icon-radius);
-    width: var(--btn-icon-size);
-    height: var(--btn-icon-height);
+    width: clamp(0.5rem, 3.8vw, 6vw);
+    height: clamp(0.5rem, 3.8vw, 6vw);
     font-size: var(--btn-icon-font);
     display: grid;
     place-items: center;
+    color: var(--color-text-color)
   }
 
-  .right-btn{
+  .right-btn {
     background-color: var(--btn-right-bg);
     border-radius: 1vw;
     width: clamp(0.5rem, 3.8vw, 6vw);
-    height: clamp(0.5rem, 3.8vw, 6vw);;
+    height: clamp(0.5rem, 3.8vw, 6vw);
+    color: var(--color-text-color);
+    font-size: 1.3vw;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+
+    &:hover {
+      background-color: #5e628c;
+    }
   }
 
   .experience-card{

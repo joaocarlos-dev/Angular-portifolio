@@ -1,6 +1,6 @@
 <app-navbar></app-navbar>
 <div
-  class="hidden md:flex bg-card-background h-full w-full rounded-[2vw] flex-col items-center text-text-color justify-between"
+  class="hidden md:flex bg-card-background h-full w-full rounded-[2vw] flex-col items-center text-text-color justify-start"
 >
   <div class="flex flex-col items-center text-center">
     <p class="text-font-title">{{ greetingText }}</p>
@@ -14,7 +14,9 @@
     </p>
   </div>
 
-  <div class="flex justify-center w-full text-font-header">
+  <div
+    class="flex-grow flex items-center justify-center w-full text-font-header"
+  >
     <div class="flex flex-col items-start gap-4">
       <div class="header-button" (click)="onSectionClick('about')">
         <i class="fa fa-user-circle"></i>
@@ -37,25 +39,5 @@
         <span>{{ resumeText }}</span>
       </div>
     </div>
-  </div>
-
-  <div class="text-font-icons flex gap-6 pb-4">
-    <a
-      class="left-btn-icon"
-      href="https://github.com/joaocarlos-dev"
-      target="_blank"
-    >
-      <i class="fa fa-github"></i>
-    </a>
-    <a
-      class="left-btn-icon"
-      href="https://www.linkedin.com/in/joao-henrique-jorge-carlos/"
-      target="_blank"
-    >
-      <i class="fa fa-linkedin" aria-hidden="true"></i>
-    </a>
-    <a class="left-btn-icon" href="mailto:joaohenriquejorgecarlos@email.com">
-      <i class="fa fa-envelope" aria-hidden="true"></i>
-    </a>
   </div>
 </div>
