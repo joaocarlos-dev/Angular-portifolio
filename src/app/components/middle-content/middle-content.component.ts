@@ -3,11 +3,17 @@ import { trigger, transition, style, animate } from '@angular/animations';
 import { CommonModule } from '@angular/common';
 import { AboutComponent } from '../about/about.component';
 import { ExperienceComponent } from '../experience/experience.component';
+import { ProjectsComponent } from '../projects/projects.component';
 
 @Component({
   selector: 'app-middle-content',
   standalone: true,
-  imports: [CommonModule, AboutComponent, ExperienceComponent],
+  imports: [
+    CommonModule,
+    AboutComponent,
+    ExperienceComponent,
+    ProjectsComponent,
+  ],
   templateUrl: './middle-content.component.html',
   styleUrl: './middle-content.component.scss',
   animations: [
