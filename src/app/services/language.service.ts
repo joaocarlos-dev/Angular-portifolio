@@ -10,12 +10,12 @@ export class LanguageService {
 
   setLanguage(lang: 'en' | 'pt') {
     this.currentLanguage = lang;
-    this.languageSubject.next(lang); // Emite a mudança de idioma
+    this.languageSubject.next(lang);
   }
 
   toggleLanguage() {
     this.currentLanguage = this.currentLanguage === 'en' ? 'pt' : 'en';
-    this.languageSubject.next(this.currentLanguage); // Emite a mudança de idioma
+    this.languageSubject.next(this.currentLanguage);
   }
 
   getLanguage() {
@@ -27,6 +27,6 @@ export class LanguageService {
   }
 
   getLanguageObservable() {
-    return this.languageSubject.asObservable(); // Retorna o Observable para observação externa
+    return this.languageSubject.asObservable();
   }
 }

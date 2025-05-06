@@ -35,14 +35,21 @@ export class ProjectCardComponent {
   ptCards = [
     {
       title: 'Projeto 1',
-      content: 'Breve descrição do projeto.',
+      content:
+        'Breve descrição do projeto, teste escrevendo um textão pra ver se funciona',
       repoUser: 'joaocarlos-dev',
       repoName: 'AgendaTelefonica',
       technologies: ['Angular', 'Python'],
     },
-
     {
       title: 'Projeto 2',
+      content: 'Breve descrição do projeto.',
+      repoUser: 'joaocarlos-dev',
+      repoName: 'Angular-portifolio',
+      technologies: ['Angular', 'Python'],
+    },
+    {
+      title: 'Projeto 3',
       content: 'Breve descrição do projeto.',
       repoUser: 'joaocarlos-dev',
       repoName: 'Angular-portifolio',
@@ -58,9 +65,15 @@ export class ProjectCardComponent {
       repoName: 'AgendaTelefonica',
       technologies: ['Angular', 'Python'],
     },
-
     {
-      title: 'Project 1',
+      title: 'Project 2',
+      content: 'Short project description.',
+      repoUser: 'joaocarlos-dev',
+      repoName: 'Angular-portifolio',
+      technologies: ['Angular', 'Python'],
+    },
+    {
+      title: 'Project 3',
       content: 'Short project description.',
       repoUser: 'joaocarlos-dev',
       repoName: 'Angular-portifolio',
@@ -83,7 +96,7 @@ export class ProjectCardComponent {
     this.githubReadmeService.getReadme(card.repoUser, card.repoName).subscribe({
       next: (data) => {
         console.log('Tipo de data:', typeof data, data);
-        console.log('README carregado:', data.substring(0, 100)); // mostre os primeiros 100 caracteres
+        console.log('README carregado:', data.substring(0, 100));
         this.readmeContent = data;
         this.loadingReadme = false;
       },
