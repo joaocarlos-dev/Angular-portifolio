@@ -6,9 +6,8 @@ Este projeto tem como objetivo servir como portfólio pessoal. Nele, são aprese
 
 - Informações sobre mim  
 - Experiências profissionais  
-- Habilidades técnicas  
-- Projetos desenvolvidos  
-- Contato  
+- Projetos
+- Contato
 
 ## Tecnologias utilizadas
 
