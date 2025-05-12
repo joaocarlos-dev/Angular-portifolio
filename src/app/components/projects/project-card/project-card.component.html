@@ -1,50 +1,40 @@
 <div class="grid gap-6 grid-cols-[repeat(auto-fit,minmax(250px,1fr))]">
   <div
     *ngFor="let card of cards; let i = index"
-    class="cursor-pointer p-4 bg-[--color-card-background] text-[#cccee7] rounded-[1vw] shadow-md border border-white/10 hover:shadow-xl transition-transform hover:-translate-y-1"
+    class="cursor-pointer p-4 bg-card-background text-[#cccee7] rounded-[1vw] shadow-md border border-white/10 hover:shadow-xl transition-transform hover:-translate-y-1"
     (click)="openModal(i)"
   >
     <h3 class="text-lg font-semibold">{{ card.title }}</h3>
-    <p class="text-sm mt-2">{{ card.content }}</p>
+    <p class="text-sm mt-2">{{ card.short_description }}</p>
     <ul class="text-xs text-gray-400 mt-3 list-disc ml-4 space-y-1">
       <li *ngFor="let tech of card.technologies">{{ tech }}</li>
     </ul>
   </div>
 </div>
 
-<!-- Overlay cobrindo toda a tela -->
+<!-- Overlay com fundo sólido cobrindo toda a tela -->
 <div
   *ngIf="selectedCard !== null"
-  class="fixed inset-0 bg-[--color-card-background] bg-opacity-100 backdrop-blur-sm flex items-center justify-center z-50"
+  class="fixed inset-0 flex items-center justify-center w-full h-full"
+  style="background-color: var(--color-card-background)"
 >
-  <!-- Modal em tela cheia -->
+  <!-- Modal -->
   <div
-    class="relative w-full h-full bg-[--color-card-background] text-[#cccee7] p-6 flex flex-col overflow-auto"
+    @modalAnimation
+    class="relative bg-card-background text-[#cccee7] p-6 rounded-lg shadow-lg overflow-auto"
   >
-    <!-- Botão de fechar -->
     <button
       class="absolute top-4 right-4 text-white text-3xl font-bold z-10"
       (click)="closeModal()"
     >
       &times;
     </button>
-    <!-- Dentro do modal -->
-    <div *ngIf="selectedCard !== null" class="...">
-      <div class="...">
-        <h2 class="text-2xl font-bold mb-4">
-          {{ cards[selectedCard].title }}
-        </h2>
 
-        <div *ngIf="loadingReadme" class="text-gray-400">
-          Carregando README...
-        </div>
-
-        <markdown
-          *ngIf="!loadingReadme"
-          [data]="readmeContent"
-          class="prose prose-invert max-w-none"
-        ></markdown>
-      </div>
+    <div class="prose prose-invert max-w-full" *ngIf="selectedCard !== null">
+      <h2 class="text-[5vw] font-semibold mb-4 text-center">
+        {{ cards[selectedCard].title }}
+      </h2>
+      <div [innerText]="cards[selectedCard].content"></div>
     </div>
   </div>
 </div>

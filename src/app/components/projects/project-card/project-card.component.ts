@@ -1,17 +1,22 @@
-// project-card.component.ts
 import { Component } from '@angular/core';
 import { LanguageService } from '../../../services/language.service';
-import { GithubReadmeService } from '../../../services/github-service';
 import { CommonModule, NgFor } from '@angular/common';
-import { MarkdownModule } from 'ngx-markdown';
-import { trigger, transition, style, animate } from '@angular/animations';
+
+import {
+  trigger,
+  transition,
+  style,
+  animate,
+  state,
+} from '@angular/animations';
+
+import { HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-project-card',
   templateUrl: './project-card.component.html',
   styleUrl: './project-card.component.scss',
-  imports: [CommonModule, MarkdownModule, NgFor],
-
+  imports: [CommonModule, NgFor],
   animations: [
     trigger('fadeInOut', [
       transition(':enter', [
@@ -20,66 +25,115 @@ import { trigger, transition, style, animate } from '@angular/animations';
       ]),
       transition(':leave', [animate('300ms', style({ opacity: 0 }))]),
     ]),
+    trigger('modalAnimation', [
+      transition(':enter', [
+        style({ opacity: 0, transform: 'scale(0.9)' }),
+        animate('300ms ease-out', style({ opacity: 1, transform: 'scale(1)' })),
+      ]),
+      transition(':leave', [
+        animate(
+          '300ms ease-in',
+          style({ opacity: 0, transform: 'scale(0.9)' }),
+        ),
+      ]),
+    ]),
   ],
 })
 export class ProjectCardComponent {
   selectedCard: number | null = null;
-  readmeContent: string = '';
-  loadingReadme = false;
 
-  constructor(
-    private languageService: LanguageService,
-    private githubReadmeService: GithubReadmeService,
-  ) {}
+  constructor(private languageService: LanguageService) {}
 
   ptCards = [
     {
-      title: 'Projeto 1',
+      title: 'Portfólio',
+      short_description:
+        'Meu site pessoal com portfólio, informações e projetos.',
+      content: `
+## Sobre o Projeto
+
+Este é meu site pessoal desenvolvido com Angular e TailwindCSS. Ele serve para contar sobre mim, minhas experiências profissionais e meus projetos pessoais.
+
+### Funcionalidades
+
+- Exibição dos meus projetos principais
+- Informações sobre mim e minhas especialidades
+- Links para redes sociais
+- Design responsivo adaptado para dispositivos móveis e desktops
+
+### Tecnologias Utilizadas
+
+- Angular para a estrutura do frontend
+- TailwindCSS para estilização
+- TypeScript como linguagem principal
+    `,
+      technologies: ['Angular', 'Tailwind', 'HTML', 'TypeScript'],
+    },
+    {
+      title: 'Projeto em Construção',
+      short_description: 'Este projeto ainda está sendo desenvolvido.',
       content:
-        'Breve descrição do projeto, teste escrevendo um textão pra ver se funciona',
-      repoUser: 'joaocarlos-dev',
-      repoName: 'AgendaTelefonica',
-      technologies: ['Angular', 'Python'],
+        'Este projeto ainda está em construção. Em breve, mais detalhes serão adicionados.',
+      technologies: ['Angular', 'Firebase', 'TypeScript'],
     },
     {
-      title: 'Projeto 2',
-      content: 'Breve descrição do projeto.',
-      repoUser: 'joaocarlos-dev',
-      repoName: 'Angular-portifolio',
-      technologies: ['Angular', 'Python'],
-    },
-    {
-      title: 'Projeto 3',
-      content: 'Breve descrição do projeto.',
-      repoUser: 'joaocarlos-dev',
-      repoName: 'Angular-portifolio',
-      technologies: ['Angular', 'Python'],
+      title: 'Projeto em Construção',
+      short_description: 'Este projeto ainda está sendo desenvolvido.',
+      content:
+        'Este projeto ainda está em construção. Em breve, mais detalhes serão adicionados.',
+      technologies: ['Angular', 'Chart.js', 'OAuth2'],
     },
   ];
 
   enCards = [
     {
-      title: 'Project 1',
-      content: 'Short project description.',
-      repoUser: 'joaocarlos-dev',
-      repoName: 'AgendaTelefonica',
-      technologies: ['Angular', 'Python'],
+      title: 'Portfolio',
+      short_description:
+        'My personal website with portfolio, info and projects.',
+      content: `
+## About the Project
+
+This is my personal website built with Angular and TailwindCSS. It serves as a portfolio and a showcase of my skills and experience.
+
+### Features
+
+- Showcases my main projects
+- Contains information about me and my skills
+- Links to social media
+- Responsive design for mobile and desktop
+
+### Technologies Used
+
+- Angular for frontend structure
+- TailwindCSS for styling
+- TypeScript as the main language
+
+### Purpose
+
+To create an online space where recruiters, colleagues or anyone interested can check out my work and ongoing projects.
+      `,
+      technologies: ['Angular', 'Tailwind', 'HTML', 'TypeScript'],
     },
     {
-      title: 'Project 2',
-      content: 'Short project description.',
-      repoUser: 'joaocarlos-dev',
-      repoName: 'Angular-portifolio',
-      technologies: ['Angular', 'Python'],
+      title: 'Project in Progress',
+      short_description: 'This project is still under development.',
+      content:
+        'This project is still in progress. More details will be added soon.',
+      technologies: ['Angular', 'Firebase', 'TypeScript'],
     },
     {
-      title: 'Project 3',
-      content: 'Short project description.',
-      repoUser: 'joaocarlos-dev',
-      repoName: 'Angular-portifolio',
-      technologies: ['Angular', 'Python'],
+      title: 'Project in Progress',
+      short_description: 'This project is still under development.',
+      content:
+        'This project is still in progress. More details will be added soon.',
+      technologies: ['Angular', 'Chart.js', 'OAuth2'],
     },
   ];
+
+  @HostListener('document:keydown.escape', ['$event'])
+  handleEscape(event: KeyboardEvent) {
+    this.closeModal();
+  }
 
   get cards() {
     return this.languageService.isPortuguese() ? this.ptCards : this.enCards;
@@ -87,29 +141,9 @@ export class ProjectCardComponent {
 
   openModal(index: number) {
     this.selectedCard = index;
-    const card = this.cards[index];
-    this.readmeContent = '';
-    this.loadingReadme = true;
-
-    console.log('Buscando README para:', card.repoUser, card.repoName);
-
-    this.githubReadmeService.getReadme(card.repoUser, card.repoName).subscribe({
-      next: (data) => {
-        console.log('Tipo de data:', typeof data, data);
-        console.log('README carregado:', data.substring(0, 100));
-        this.readmeContent = data;
-        this.loadingReadme = false;
-      },
-      error: (err) => {
-        console.error('Erro ao buscar README:', err);
-        this.readmeContent = 'Erro ao carregar README.md';
-        this.loadingReadme = false;
-      },
-    });
   }
 
   closeModal() {
     this.selectedCard = null;
-    this.readmeContent = '';
   }
 }

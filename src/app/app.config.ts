@@ -2,6 +2,8 @@ import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { routes } from './app.routes';
+import { MarkdownModule } from 'ngx-markdown';
+
 import {
   provideClientHydration,
   withEventReplay,
@@ -17,8 +19,6 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideClientHydration(withEventReplay()),
     provideAnimationsAsync(),
-    provideHttpClient(
-      withInterceptorsFromDi(), // Adicione esta linha
-    ),
+    provideHttpClient(withInterceptorsFromDi()),
   ],
 };
