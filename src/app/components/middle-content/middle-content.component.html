@@ -1,8 +1,6 @@
 <div
   class="hidden md:flex bg-card-background h-full rounded-[2vw] flex-col items-center"
 >
-  <div class="text-text-color text-[3vw]">!! PROJETO EM CONSTRUÇÃO !!</div>
-
   <div *ngIf="visibleSection === 'about'" @fadeInOut>
     <app-about></app-about>
   </div>
@@ -17,5 +15,9 @@
 
   <div *ngIf="visibleSection === 'resume'" @fadeInOut class="w-full">
     <app-curriculum></app-curriculum>
+  </div>
+
+  <div *ngIf="visibleSection === 'contact'" @fadeInOut class="w-full h-[95%]">
+    <app-contact></app-contact>
   </div>
 </div>
