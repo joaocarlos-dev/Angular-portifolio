@@ -31,9 +31,13 @@
     </button>
 
     <div class="prose prose-invert max-w-full" *ngIf="selectedCard !== null">
-      <h2 class="text-[5vw] font-semibold mb-4 text-center">
+      <a
+        href="https://github.com/joaocarlos-dev/Angular-portifolio"
+        target="_blank"
+        class="text-[5vw] underline decoration-1 font-semibold mb-4 flex justify-center"
+      >
         {{ cards[selectedCard].title }}
-      </h2>
+      </a>
       <div [innerText]="cards[selectedCard].content"></div>
     </div>
   </div>

@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { AboutComponent } from '../about/about.component';
 import { ExperienceComponent } from '../experience/experience.component';
 import { ProjectsComponent } from '../projects/projects.component';
+import { CurriculumComponent } from '../curriculum/curriculum.component';
 
 @Component({
   selector: 'app-middle-content',
@@ -13,6 +14,7 @@ import { ProjectsComponent } from '../projects/projects.component';
     AboutComponent,
     ExperienceComponent,
     ProjectsComponent,
+    CurriculumComponent,
   ],
   templateUrl: './middle-content.component.html',
   styleUrl: './middle-content.component.scss',

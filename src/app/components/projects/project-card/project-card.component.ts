@@ -52,7 +52,7 @@ export class ProjectCardComponent {
       content: `
 ## Sobre o Projeto
 
-Este é meu site pessoal desenvolvido com Angular e TailwindCSS. Ele serve para contar sobre mim, minhas experiências profissionais e meus projetos pessoais.
+Este é meu site pessoal desenvolvido com Angular e Tailwind. Ele serve para contar sobre mim, minhas experiências profissionais e meus projetos pessoais.
 
 ### Funcionalidades
 
@@ -74,14 +74,14 @@ Este é meu site pessoal desenvolvido com Angular e TailwindCSS. Ele serve para 
       short_description: 'Este projeto ainda está sendo desenvolvido.',
       content:
         'Este projeto ainda está em construção. Em breve, mais detalhes serão adicionados.',
-      technologies: ['Angular', 'Firebase', 'TypeScript'],
+      technologies: ['Em breve'],
     },
     {
       title: 'Projeto em Construção',
       short_description: 'Este projeto ainda está sendo desenvolvido.',
       content:
         'Este projeto ainda está em construção. Em breve, mais detalhes serão adicionados.',
-      technologies: ['Angular', 'Chart.js', 'OAuth2'],
+      technologies: ['Em breve'],
     },
   ];
 
@@ -93,7 +93,7 @@ Este é meu site pessoal desenvolvido com Angular e TailwindCSS. Ele serve para 
       content: `
 ## About the Project
 
-This is my personal website built with Angular and TailwindCSS. It serves as a portfolio and a showcase of my skills and experience.
+This is my personal website built with Angular and Tailwind. It serves as a portfolio and a showcase of my skills and experience.
 
 ### Features
 
@@ -119,14 +119,14 @@ To create an online space where recruiters, colleagues or anyone interested can 
       short_description: 'This project is still under development.',
       content:
         'This project is still in progress. More details will be added soon.',
-      technologies: ['Angular', 'Firebase', 'TypeScript'],
+      technologies: ['Soon'],
     },
     {
       title: 'Project in Progress',
       short_description: 'This project is still under development.',
       content:
         'This project is still in progress. More details will be added soon.',
-      technologies: ['Angular', 'Chart.js', 'OAuth2'],
+      technologies: ['Soon'],
     },
   ];
 

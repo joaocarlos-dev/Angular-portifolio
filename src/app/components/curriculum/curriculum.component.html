@@ -1,0 +1,32 @@
+<div
+  class="w-full h-full flex flex-col align-center justify-center items-center"
+>
+  <div class="w-full flex justify-center">
+    <button
+      (click)="downloadPDF()"
+      class="right-btn w-fit h-[60px] mb-3 mt-3 rounded-lg transition-colors duration-200 shadow-md"
+    >
+      Download CV
+    </button>
+  </div>
+
+  <div class="w-[90%] h-full bg-white flex">
+    <ngx-extended-pdf-viewer
+      [src]="'/assets/joao-henrique.pdf'"
+      [height]="'100%'"
+      [textLayer]="true"
+      [showHandToolButton]="true"
+      [filenameForDownload]="'joao-henrique.pdf'"
+      class="flex-1 w-full border rounded shadow"
+      [showOpenFileButton]="false"
+      [showPrintButton]="false"
+      [showBookModeButton]="false"
+      [showHandToolButton]="false"
+      [showSecondaryToolbarButton]="false"
+      [showSidebarButton]="false"
+      [showRotateButton]="false"
+      [showSpreadButton]="false"
+    >
+    </ngx-extended-pdf-viewer>
+  </div>
+</div>
