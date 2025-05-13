@@ -33,6 +33,23 @@
     color: var(--color-text-color)
   }
 
+  .download-btn {
+    background-color: var(--btn-right-bg);
+    border-radius: 1vw;
+    color: var(--color-text-color);
+    font-size: 1.3vw;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+
+    &:hover {
+      background-color: #5e628c;
+    }
+  }
+
   .right-btn {
     background-color: var(--btn-right-bg);
     border-radius: 1vw;
