@@ -68,6 +68,7 @@ Este é meu site pessoal desenvolvido com Angular e Tailwind. Ele serve para con
 - TypeScript como linguagem principal
     `,
       technologies: ['Angular', 'Tailwind', 'HTML', 'TypeScript'],
+      link: 'https://github.com/Ja1zinh0/Angular-portifolio',
     },
     {
       title: 'Projeto em Construção',
@@ -75,6 +76,7 @@ Este é meu site pessoal desenvolvido com Angular e Tailwind. Ele serve para con
       content:
         'Este projeto ainda está em construção. Em breve, mais detalhes serão adicionados.',
       technologies: ['Em breve'],
+      link: '',
     },
     {
       title: 'Projeto em Construção',
@@ -82,6 +84,7 @@ Este é meu site pessoal desenvolvido com Angular e Tailwind. Ele serve para con
       content:
         'Este projeto ainda está em construção. Em breve, mais detalhes serão adicionados.',
       technologies: ['Em breve'],
+      link: '',
     },
   ];
 
@@ -113,6 +116,7 @@ This is my personal website built with Angular and Tailwind. It serves as a port
 To create an online space where recruiters, colleagues or anyone interested can check out my work and ongoing projects.
       `,
       technologies: ['Angular', 'Tailwind', 'HTML', 'TypeScript'],
+      link: 'https://github.com/Ja1zinh0/Angular-portifolio',
     },
     {
       title: 'Project in Progress',
@@ -120,6 +124,7 @@ To create an online space where recruiters, colleagues or anyone interested can 
       content:
         'This project is still in progress. More details will be added soon.',
       technologies: ['Soon'],
+      link: '',
     },
     {
       title: 'Project in Progress',
@@ -127,6 +132,7 @@ To create an online space where recruiters, colleagues or anyone interested can 
       content:
         'This project is still in progress. More details will be added soon.',
       technologies: ['Soon'],
+      link: '',
     },
   ];
 
