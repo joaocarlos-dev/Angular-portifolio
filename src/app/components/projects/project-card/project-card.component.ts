@@ -152,4 +152,14 @@ To create an online space where recruiters, colleagues or anyone interested can 
   closeModal() {
     this.selectedCard = null;
   }
+  @HostListener('document:click', ['$event'])
+  onClickOutside(event: MouseEvent) {
+    const modalContent = document.querySelector('.modal-content');
+    if (
+      this.selectedCard !== null &&
+      !modalContent?.contains(event.target as Node)
+    ) {
+      this.closeModal();
+    }
+  }
 }

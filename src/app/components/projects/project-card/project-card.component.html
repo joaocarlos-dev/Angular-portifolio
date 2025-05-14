@@ -17,23 +17,18 @@
 <!-- Overlay com fundo sólido cobrindo toda a tela -->
 <div
   *ngIf="selectedCard !== null"
-  class="fixed inset-0 flex items-center justify-center w-full h-full"
-  style="background-color: var(--color-card-background)"
+  class="fixed inset-0 flex items-center justify-center w-full h-full p-2 bg-card-background"
+  (click)="closeModal()"
 >
   <!-- Modal -->
   <div
     @modalAnimation
-    class="relative bg-card-background text-[#cccee7] p-6 rounded-lg shadow-lg overflow-auto"
+    class="relative bg-card-background text-[#cccee7] p-4 rounded-lg shadow-lg overflow-auto max-h-[90vh] w-full max-w-[95vw]"
+    (click)="$event.stopPropagation()"
   >
-    <button
-      class="absolute top-4 right-4 text-white text-3xl font-bold z-10 hover:cursor-pointer"
-      (click)="closeModal()"
-    >
-      &times;
-    </button>
-
-    <div class="prose prose-invert max-w-full" *ngIf="selectedCard !== null">
-      <h2 class="text-[5vw] font-semibold mb-4 flex justify-center">
+    <!-- Cabeçalho com título e botão fechar -->
+    <div class="flex justify-between items-start gap-4 mb-4">
+      <h2 class="text-xl font-semibold truncate">
         <a
           *ngIf="cards[selectedCard].link; else justTitle"
           [href]="cards[selectedCard].link"
@@ -47,6 +42,16 @@
         </ng-template>
       </h2>
 
+      <button
+        class="text-white text-2xl font-bold hover:cursor-pointer shrink-0"
+        (click)="closeModal()"
+      >
+        &times;
+      </button>
+    </div>
+
+    <!-- Conteúdo -->
+    <div class="prose prose-invert max-w-full" *ngIf="selectedCard !== null">
       <div [innerText]="cards[selectedCard].content"></div>
     </div>
   </div>
