@@ -2,9 +2,9 @@
   class="md:hidden bg-card-background text-text-color shadow p-4 rounded-[2vw] transition-all duration-300 ease-in-out"
 >
   <div class="flex items-center justify-between">
-    <span class="text-font-title text-lg">João Henrique</span>
+    <span class="text-font-title text-lg">{{ titleText }}</span>
     <button class="text-[18px] text-center" (click)="toggleLanguage($event)">
-      {{ currentLanguage === "en" ? "EN" : "PT" }}
+      {{ currentLanguage === "en" ? "EN" : "EN" }}
     </button>
     <button (click)="toggleMenu()" class="text-2xl">&#9776;</button>
   </div>
@@ -19,23 +19,23 @@
     <div class="flex flex-col items-start gap-4">
       <div class="flex items-center gap-2">
         <i class="fa fa-user-circle"></i>
-        <a (click)="onSectionClick('about')">About</a>
+        <a (click)="onSectionClick('about')">{{ aboutText }}</a>
       </div>
       <div class="flex items-center gap-2">
         <i class="fa fa-briefcase"></i>
-        <a (click)="onSectionClick('experience')">Experiences</a>
+        <a (click)="onSectionClick('experience')">{{ experienceText }}</a>
       </div>
       <div class="flex items-center gap-2">
         <i class="fa fa-code"></i>
-        <a (click)="onSectionClick('projects')">Projects</a>
+        <a (click)="onSectionClick('projects')">{{ projectsText }}</a>
       </div>
       <div class="flex items-center gap-2">
         <i class="fa fa-envelope-open-o"></i>
-        <a (click)="onSectionClick('contact')">Contact me</a>
+        <a (click)="onSectionClick('contact')">{{ contactText }}</a>
       </div>
       <div class="flex items-center gap-3">
         <i class="fa fa-file-text"></i>
-        <a (click)="onSectionClick('resume')">Resume</a>
+        <a (click)="onSectionClick('resume')">{{ resumeText }}</a>
       </div>
     </div>
   </div>

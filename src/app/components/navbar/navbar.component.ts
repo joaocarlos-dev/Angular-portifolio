@@ -1,6 +1,13 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Output,
+  OnInit,
+  OnDestroy,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LanguageService } from '../../services/language.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-navbar',
@@ -9,9 +16,53 @@ import { LanguageService } from '../../services/language.service';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit, OnDestroy {
   isMenuOpen = false;
+
+  // Textos traduzíveis
+  aboutText = '';
+  experienceText = '';
+  projectsText = '';
+  contactText = '';
+  resumeText = '';
+  titleText = '';
+
+  private languageSubscription!: Subscription;
+
   constructor(public languageService: LanguageService) {}
+
+  ngOnInit() {
+    this.setLanguageContent();
+    this.languageSubscription = this.languageService
+      .getLanguageObservable()
+      .subscribe(() => {
+        this.setLanguageContent();
+      });
+  }
+
+  ngOnDestroy() {
+    if (this.languageSubscription) {
+      this.languageSubscription.unsubscribe();
+    }
+  }
+
+  private setLanguageContent() {
+    if (this.languageService.isPortuguese()) {
+      this.titleText = 'João Henrique';
+      this.aboutText = 'Sobre';
+      this.experienceText = 'Experiências';
+      this.projectsText = 'Projetos';
+      this.contactText = 'Contato';
+      this.resumeText = 'Currículo';
+    } else {
+      this.titleText = 'João Henrique';
+      this.aboutText = 'About';
+      this.experienceText = 'Experiences';
+      this.projectsText = 'Projects';
+      this.contactText = 'Contact me';
+      this.resumeText = 'Resume';
+    }
+  }
 
   @Output() sectionChanged = new EventEmitter<
     'about' | 'experience' | 'projects' | 'contact' | 'resume'
@@ -29,14 +80,8 @@ export class NavbarComponent {
   }
 
   toggleLanguage(event: Event) {
-    event.stopPropagation(); // Impede a propagação do evento de clique
+    event.stopPropagation();
     this.languageService.toggleLanguage();
-  }
-
-  // Método para alternar o cartão de experiência (não queremos que isso afete a troca de idioma)
-  toggleCard(event: Event) {
-    event.stopPropagation(); // Impede a propagação do evento de clique
-    // Aqui você deve colocar a lógica de abrir/fechar os cards, se necessário
   }
 
   get currentLanguage() {
