@@ -12,7 +12,7 @@ export class ExperienceCardComponent {
   constructor(private languageService: LanguageService) {}
   ptCards = [
     {
-      title: 'Analista de Suporte e Desenvolvedor',
+      title: 'Analista de Suporte',
       time: '09/2024 - Atual',
       company: 'INOV.AI',
       content: `Atuo na equipe de suporte e desenvolvimento em uma lawtech que entrega 
@@ -46,7 +46,7 @@ export class ExperienceCardComponent {
 
   enCards = [
     {
-      title: 'Support Analyst and Developer',
+      title: 'Support Analyst',
       time: '09/2024 - Present',
       company: 'INOV.AI',
       content: `I work on the support and development team at a lawtech that delivers 
