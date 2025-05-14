@@ -145,21 +145,27 @@ To create an online space where recruiters, colleagues or anyone interested can 
     return this.languageService.isPortuguese() ? this.ptCards : this.enCards;
   }
 
+  // Adicione esta variável para controle do modal
+  isModalOpen = false;
+
+  // Modifique os métodos de abertura/fechamento
   openModal(index: number) {
     this.selectedCard = index;
+    this.isModalOpen = true;
   }
 
   closeModal() {
     this.selectedCard = null;
+    this.isModalOpen = false;
   }
+
   @HostListener('document:click', ['$event'])
   onClickOutside(event: MouseEvent) {
-    const modalContent = document.querySelector('.modal-content');
-    if (
-      this.selectedCard !== null &&
-      !modalContent?.contains(event.target as Node)
-    ) {
-      this.closeModal();
+    if (this.isModalOpen) {
+      const modalContent = document.querySelector('.modal-content');
+      if (modalContent && !modalContent.contains(event.target as Node)) {
+        this.closeModal();
+      }
     }
   }
 }
