@@ -2,8 +2,9 @@
   *ngFor="let card of cards; let i = index"
   class="md:w-full cursor-pointer m-2 p-4 mt-6 bg-[--color-card-background] text-[#cccee7] rounded-[1vw] shadow-md border border-white/20 transition-transform hover:-translate-y-1 hover:shadow-lg"
   (click)="toggleCard(i)"
+  style="min-width: 0; overflow: hidden"
 >
-  <!-- Cabeçalho do card -->
+  <!-- Cabeçalho -->
   <div class="grid grid-cols-2 items-center mb-4">
     <div
       class="text-[--text-font-title] text-[--color-text-color] font-semibold text-sm md:text-base"
@@ -17,13 +18,13 @@
     </div>
   </div>
 
-  <!-- Conteúdo do card -->
+  <!-- Conteúdo do Card -->
   <div
     [ngClass]="{
-      'max-h-[300px] opacity-100 mt-4 scale-100': card.isOpen,
+      'max-h-[9999px] opacity-100 mt-4 scale-100': card.isOpen,
       'max-h-0 opacity-0 scale-95 overflow-hidden': !card.isOpen,
     }"
-    class="transition-all duration-500 ease-in-out origin-top transform text-[--color-text-color] overflow-hidden"
+    class="transition-all duration-450 ease-in-out origin-top transform text-[--color-text-color] overflow-hidden"
   >
     <div class="font-semibold mb-1 text-sm md:text-base">
       {{ card.company }}
@@ -33,10 +34,11 @@
     </div>
 
     <!-- Tecnologias usadas -->
-    <div class="flex flex-wrap gap-2 justify-start overflow-x-auto mb-4">
+    <div class="flex flex-wrap gap-2 justify-start mb-4 w-full">
       <div
         *ngFor="let tech of card.technologies"
-        class="bg-[#4e527a] text-[--color-text-color] px-2 py-1 rounded-md text-xs md:text-sm font-semibold"
+        class="bg-[#4e527a] text-[--color-text-color] px-2 py-1 rounded-md text-xs md:text-sm font-semibold break-words max-w-full overflow-hidden"
+        style="word-break: break-word"
       >
         {{ tech }}
       </div>
