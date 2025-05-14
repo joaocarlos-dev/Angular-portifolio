@@ -18,7 +18,6 @@ import { NavbarComponent } from '../navbar/navbar.component';
     ProjectsComponent,
     CurriculumComponent,
     ContactComponent,
-    NavbarComponent,
   ],
   templateUrl: './middle-content.component.html',
   styleUrl: './middle-content.component.scss',

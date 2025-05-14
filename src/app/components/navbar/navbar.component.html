@@ -16,23 +16,23 @@
     <div class="flex flex-col items-start gap-4">
       <div class="flex items-center gap-2">
         <i class="fa fa-user-circle"></i>
-        <a>About</a>
+        <a (click)="onSectionClick('about')">About</a>
       </div>
       <div class="flex items-center gap-2">
         <i class="fa fa-briefcase"></i>
-        <a>Experiences</a>
+        <a (click)="onSectionClick('experience')">Experiences</a>
       </div>
       <div class="flex items-center gap-2">
         <i class="fa fa-code"></i>
-        <a>Projects</a>
+        <a (click)="onSectionClick('projects')">Projects</a>
       </div>
       <div class="flex items-center gap-2">
         <i class="fa fa-envelope-open-o"></i>
-        <a>Contact me</a>
+        <a (click)="onSectionClick('contact')">Contact me</a>
       </div>
       <div class="flex items-center gap-3">
         <i class="fa fa-file-text"></i>
-        <a>Resume</a>
+        <a (click)="onSectionClick('resume')">Resume</a>
       </div>
     </div>
   </div>

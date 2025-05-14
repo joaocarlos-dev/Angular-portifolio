@@ -1,17 +1,17 @@
 <div
   *ngFor="let card of cards; let i = index"
-  class="w-full cursor-pointer m-2 p-4 mt-6 bg-[--color-card-background] text-[#cccee7] rounded-[1vw] shadow-md border border-white/20 transition-transform hover:-translate-y-1 hover:shadow-lg"
+  class="md:w-full cursor-pointer m-2 p-4 mt-6 bg-[--color-card-background] text-[#cccee7] rounded-[1vw] shadow-md border border-white/20 transition-transform hover:-translate-y-1 hover:shadow-lg"
   (click)="toggleCard(i)"
 >
   <!-- Cabeçalho do card -->
-  <div class="flex justify-between items-center">
+  <div class="grid grid-cols-2 items-center mb-4">
     <div
-      class="text-[--text-font-title] text-[--color-text-color] font-semibold"
+      class="text-[--text-font-title] text-[--color-text-color] font-semibold text-sm md:text-base"
     >
       {{ card.title }}
     </div>
     <div
-      class="text-[--text-font-undersub] text-[--color-text-color] opacity-70 font-medium"
+      class="text-[--text-font-undersub] text-[--color-text-color] opacity-70 font-medium text-right text-xs md:text-sm"
     >
       {{ card.time }}
     </div>
@@ -20,23 +20,23 @@
   <!-- Conteúdo do card -->
   <div
     [ngClass]="{
-      'max-h-96 opacity-100 mt-4 scale-100': card.isOpen,
+      'max-h-[300px] opacity-100 mt-4 scale-100': card.isOpen,
       'max-h-0 opacity-0 scale-95 overflow-hidden': !card.isOpen,
     }"
-    class="transition-all duration-500 ease-in-out origin-top transform text-[--color-text-color]"
+    class="transition-all duration-500 ease-in-out origin-top transform text-[--color-text-color] overflow-hidden"
   >
-    <div class="font-semibold mb-1">
+    <div class="font-semibold mb-1 text-sm md:text-base">
       {{ card.company }}
     </div>
-    <div class="opacity-85 mb-4">
+    <div class="opacity-85 mb-4 text-xs md:text-sm">
       {{ card.content }}
     </div>
 
     <!-- Tecnologias usadas -->
-    <div class="flex flex-wrap gap-2 justify-start">
+    <div class="flex flex-wrap gap-2 justify-start overflow-x-auto mb-4">
       <div
         *ngFor="let tech of card.technologies"
-        class="bg-[#4e527a] text-[--color-text-color] px-2 py-1 rounded-md text-[0.9vw] font-semibold"
+        class="bg-[#4e527a] text-[--color-text-color] px-2 py-1 rounded-md text-xs md:text-sm font-semibold"
       >
         {{ tech }}
       </div>
