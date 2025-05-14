@@ -6,6 +6,7 @@ import { ExperienceComponent } from '../experience/experience.component';
 import { ProjectsComponent } from '../projects/projects.component';
 import { CurriculumComponent } from '../curriculum/curriculum.component';
 import { ContactComponent } from '../contact/contact.component';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-middle-content',
@@ -17,6 +18,7 @@ import { ContactComponent } from '../contact/contact.component';
     ProjectsComponent,
     CurriculumComponent,
     ContactComponent,
+    NavbarComponent,
   ],
   templateUrl: './middle-content.component.html',
   styleUrl: './middle-content.component.scss',

@@ -1,15 +1,15 @@
 <div class="text-text-color w-full flex flex-col items-center px-4 mt-4">
-  <!-- Saudação em destaque -->
   <h1
-    class="text-[2rem] md:text-[2.5rem] font-semibold text-center text-[--color-text-color] mb-6"
+    class="text-[1.8rem] md:text-[2.5rem] font-semibold text-center text-[--color-text-color] mb-6"
   >
     {{ greeting }}
   </h1>
 
-  <!-- Parágrafos restantes -->
-  <div class="w-[90%] text-justify">
+  <div
+    class="w-[90%] text-justify text-[1rem] md:text-[1.1rem] leading-6 md:leading-7"
+  >
     <div *ngFor="let paragraph of paragraphs">
-      <p class="mb-6 text-[--color-text-color] text-[1.1rem] leading-7">
+      <p class="mb-6 text-[--color-text-color]">
         {{ paragraph }}
       </p>
     </div>

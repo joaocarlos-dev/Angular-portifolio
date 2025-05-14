@@ -1,13 +1,17 @@
 <div
-  class="md:flex bg-background w-screen h-screen gap-4 p-4 font-default-font font-thin"
+  class="flex flex-col md:flex-row bg-background w-screen h-auto min-h-screen gap-4 p-4 font-default-font font-thin"
 >
+  <app-navbar></app-navbar>
+
   <app-leftside
-    class="w-[30%]"
+    class="order-2 md:order-1 w-full md:w-[30%]"
     (sectionChanged)="onSectionChange($event)"
   ></app-leftside>
   <app-middle-content
-    class="w-[65%]"
+    class="order-1 md:order-2 w-full md:w-[65%]"
     [activeSection]="activeSection"
   ></app-middle-content>
-  <app-rightside class="w-[5%]"></app-rightside>
+  <app-rightside
+    class="order-3 w-full md:w-[5%] hidden md:block"
+  ></app-rightside>
 </div>
