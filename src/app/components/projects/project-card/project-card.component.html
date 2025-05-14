@@ -14,42 +14,49 @@
   </div>
 </div>
 
-<!-- Overlay com fundo sólido cobrindo toda a tela -->
-<!-- Altere todas as referências para verificar selectedCard !== null -->
+<!-- Modal Overlay -->
 <div
-  *ngIf="isModalOpen"
-  class="fixed inset-0 flex items-center justify-center w-full h-full p-2 bg-card-background"
+  *ngIf="selectedCard !== null"
+  class="fixed inset-0 z-50 flex items-center justify-center w-full h-full p-4 bg-card-background overflow-y-auto"
   (click)="closeModal()"
 >
+  <!-- Modal Content -->
   <div
     @modalAnimation
-    class="modal-content relative bg-card-background text-[#cccee7] p-4 rounded-lg shadow-lg overflow-auto max-h-[90vh] w-full max-w-[95vw]"
+    class="relative bg-card-background text-[#cccee7] p-4 rounded-xl shadow-lg w-full max-w-[95vw] max-h-[90vh] overflow-auto"
     (click)="$event.stopPropagation()"
   >
-    <div class="flex justify-between items-start gap-4 mb-4">
-      <h2 class="text-xl font-semibold truncate" *ngIf="selectedCard !== null">
-        <a
-          *ngIf="cards[selectedCard].link; else justTitle"
-          [href]="cards[selectedCard].link"
-          target="_blank"
-          class="underline decoration-1"
-        >
-          {{ cards[selectedCard].title }}
-        </a>
-        <ng-template #justTitle>
-          {{ cards[selectedCard].title }}
-        </ng-template>
-      </h2>
+    <!-- Botão de Fechar -->
+    <button
+      class="absolute top-3 right-3 text-white text-2xl md:text-3xl font-bold hover:cursor-pointer z-50"
+      (click)="closeModal()"
+    >
+      &times;
+    </button>
 
-      <button
-        class="text-white text-2xl font-bold hover:cursor-pointer shrink-0"
-        (click)="closeModal()"
+    <h2
+      class="text-base md:text-xl font-semibold mb-4 text-center w-full px-6 break-words"
+      *ngIf="selectedCard !== null"
+    >
+      <a
+        *ngIf="cards[selectedCard].link; else justTitle"
+        [href]="cards[selectedCard].link"
+        target="_blank"
+        class="underline decoration-1 break-words text-[4vw]"
       >
-        &times;
-      </button>
-    </div>
+        {{ cards[selectedCard].title }}
+      </a>
+      <ng-template #justTitle>
+        {{ cards[selectedCard].title }}
+      </ng-template>
+    </h2>
 
-    <div class="prose prose-invert max-w-full" *ngIf="selectedCard !== null">
+    <!-- Conteúdo formatado -->
+    <div
+      class="prose prose-invert max-w-none text-sm md:text-base break-words"
+      *ngIf="selectedCard !== null"
+    >
+      <!-- Aqui mantemos innerText para preservar o layout -->
       <div [innerText]="cards[selectedCard].content"></div>
     </div>
   </div>
