@@ -1,5 +1,5 @@
 <div
-  class="w-full h-full flex flex-col items-center justify-center text-text-color px-4"
+  class="md:w-full h-full flex flex-col items-center justify-center text-text-color px-4"
 >
   <h2
     class="md:text-[1.3vw] font-semibold text-center mb-6 mt-6 w-full max-w-3xl"
@@ -9,11 +9,11 @@
 
   <form
     [formGroup]="emailForm"
-    class="bg-[#46486b] p-6 rounded-[1.5vw] shadow-md w-full max-w-[90%] h-full flex flex-col justify-between"
+    class="bg-[#46486b] p-6 rounded-[1.5vw] shadow-md w-full max-w-[90%] h-full flex flex-col justify-between sm: mb-6"
   >
     <div class="flex-1 flex flex-col overflow-hidden">
       <div class="mb-4">
-        <label class="block text-[1.2vw] font-medium mb-1">
+        <label class="block md:text-[1.2vw] font-medium mb-1">
           {{ labels.name }}
         </label>
         <input
@@ -24,7 +24,7 @@
       </div>
 
       <div class="mb-4">
-        <label class="block text-[1.2vw] font-medium mb-1">
+        <label class="block md:text-[1.2vw] font-medium mb-1">
           {{ labels.email }}
         </label>
         <input
@@ -35,7 +35,7 @@
       </div>
 
       <div class="flex flex-col flex-1">
-        <label class="block text-[1.2vw] font-medium mb-1">
+        <label class="block md:text-[1.2vw] font-medium mb-1">
           {{ labels.message }}
         </label>
         <textarea

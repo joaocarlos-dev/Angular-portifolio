@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { LanguageService } from '../../services/language.service';
 
 @Component({
   selector: 'app-navbar',
@@ -10,6 +11,7 @@ import { CommonModule } from '@angular/common';
 })
 export class NavbarComponent {
   isMenuOpen = false;
+  constructor(public languageService: LanguageService) {}
 
   @Output() sectionChanged = new EventEmitter<
     'about' | 'experience' | 'projects' | 'contact' | 'resume'
@@ -24,5 +26,20 @@ export class NavbarComponent {
   ) {
     this.sectionChanged.emit(section);
     this.isMenuOpen = false;
+  }
+
+  toggleLanguage(event: Event) {
+    event.stopPropagation(); // Impede a propagação do evento de clique
+    this.languageService.toggleLanguage();
+  }
+
+  // Método para alternar o cartão de experiência (não queremos que isso afete a troca de idioma)
+  toggleCard(event: Event) {
+    event.stopPropagation(); // Impede a propagação do evento de clique
+    // Aqui você deve colocar a lógica de abrir/fechar os cards, se necessário
+  }
+
+  get currentLanguage() {
+    return this.languageService.getLanguage();
   }
 }
