@@ -10,11 +10,10 @@
 
   <div class="w-[90%] h-fit bg-white flex mb-10">
     <ngx-extended-pdf-viewer
-      [src]="'/assets/joao-henrique.pdf'"
+      [src]="pdfSrc"
       [height]="'100%'"
       [textLayer]="true"
-      [showHandToolButton]="true"
-      [filenameForDownload]="'joao-henrique.pdf'"
+      [filenameForDownload]="pdfSrc.split('/').pop()"
       class="flex-1 w-full border rounded shadow"
       [showOpenFileButton]="false"
       [showPrintButton]="false"
