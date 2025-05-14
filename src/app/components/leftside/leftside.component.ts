@@ -7,13 +7,12 @@ import {
 } from '@angular/core';
 import { LanguageService } from '../../services/language.service';
 import { Subscription } from 'rxjs';
-import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-leftside',
   templateUrl: './leftside.component.html',
   styleUrls: ['./leftside.component.scss'],
-  imports: [NavbarComponent],
+  imports: [],
 })
 export class LeftsideComponent implements OnInit, OnDestroy {
   @Output() sectionChanged = new EventEmitter<
