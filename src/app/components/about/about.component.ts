@@ -37,7 +37,7 @@ export class AboutComponent implements OnInit, OnDestroy {
     if (this.languageService.isPortuguese()) {
       this.greeting = 'Olá, sou o João!';
       this.paragraphs = `
-        Sou formado em Análise e Desenvolvimento de Sistemas pela FATEC de Ribeirão Preto. Atualmente, trabalho como Analista de Suporte e Desenvolvedor na INOV.AI, uma empresa que oferece soluções jurídicas com base em inteligência artificial.
+        Sou formado em Análise e Desenvolvimento de Sistemas pela FATEC de Ribeirão Preto. Atualmente, trabalho como Analista de Suporte na INOV.AI, uma empresa que oferece soluções jurídicas com base em inteligência artificial.
 
         Tenho experiência com Python, análise de dados e prevenção de falhas em sistemas. Também trabalho com tecnologias como Kubernetes, MongoDB e PostgreSQL, sempre buscando entregar soluções escaláveis e bem documentadas.
 
@@ -48,7 +48,7 @@ export class AboutComponent implements OnInit, OnDestroy {
     } else {
       this.greeting = `Hello, I'm João!`;
       this.paragraphs = `
-        I’m a graduate in Analysis and Systems Development from FATEC in Ribeirão Preto. Currently, I work as a Support Analyst and Developer at INOV.AI, a company that provides legal solutions based on artificial intelligence.
+        I’m a graduate in Analysis and Systems Development from FATEC in Ribeirão Preto. Currently, I work as a Support Analyst at INOV.AI, a company that provides legal solutions based on artificial intelligence.
 
         I have experience with Python, data analysis, and system failure prevention. I also work with technologies such as Kubernetes, MongoDB, and PostgreSQL, always aiming to deliver scalable and well-documented solutions.
 
