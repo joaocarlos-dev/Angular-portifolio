@@ -21,15 +21,15 @@ export class AboutComponent implements OnInit, OnDestroy {
     this.languageSubscription = this.languageService
       .getLanguageObservable()
       .subscribe(() => {
-        this.setLanguageContent(); // Atualiza o conteúdo sempre que o idioma mudar
+        this.setLanguageContent();
       });
 
-    this.setLanguageContent(); // Inicializa o conteúdo ao carregar o componente
+    this.setLanguageContent();
   }
 
   ngOnDestroy() {
     if (this.languageSubscription) {
-      this.languageSubscription.unsubscribe(); // Evita vazamentos de memória
+      this.languageSubscription.unsubscribe();
     }
   }
 
@@ -37,23 +37,25 @@ export class AboutComponent implements OnInit, OnDestroy {
     if (this.languageService.isPortuguese()) {
       this.greeting = 'Olá, sou o João!';
       this.paragraphs = `
-        Sou formado em Análise e Desenvolvimento de Sistemas pela FATEC de Ribeirão Preto. Atualmente, trabalho como Analista de Suporte na INOV.AI, uma empresa que oferece soluções jurídicas com base em inteligência artificial.
+      Sou um desenvolvedor fullstack com paixão por resolver problemas complexos e construir soluções inteligentes. Trabalho com Java e Spring Boot no backend, Python para automações e análise de dados, e Angular no frontend, sempre buscando criar aplicações robustas, escaláveis e bem documentadas.
 
-        Tenho experiência com Python, análise de dados e prevenção de falhas em sistemas. Também trabalho com tecnologias como Kubernetes, MongoDB e PostgreSQL, sempre buscando entregar soluções escaláveis e bem documentadas.
+Formado em Análise e Desenvolvimento de Sistemas pela FATEC de Ribeirão Preto, atualmente atuo como Analista de Suporte na INOV.AI, uma empresa focada em soluções jurídicas com inteligência artificial. No meu dia a dia, trabalho com Python, PostgreSQL, MongoDB e outras ferramentas, apoiando a equipe no monitoramento, manutenção e evolução de sistemas.
 
-        Sou apaixonado por resolver problemas, constantemente buscando novos desafios e oportunidades para aprender. Fora do trabalho, gosto de resolver cubos mágicos, participar de maratonas de programação e tocar violino.
+Fora do ambiente profissional, sou movido por desafios e pela vontade de aprender constantemente. Gosto de competições saudáveis, especialmente maratonas de programação, onde posso testar meus limites e aprender com outros devs. Também curto resolver cubos mágicos e praticar violino.
+
+  
       `
         .split('\n')
         .filter((p) => p.trim() !== '');
     } else {
       this.greeting = `Hello, I'm João!`;
       this.paragraphs = `
-        I’m a graduate in Analysis and Systems Development from FATEC in Ribeirão Preto. Currently, I work as a Support Analyst at INOV.AI, a company that provides legal solutions based on artificial intelligence.
+      I'm a fullstack developer with a passion for solving complex problems and building smart solutions. I work with Java and Spring Boot on the backend, Python for automation and data analysis, and Angular on the frontend — always aiming to deliver robust, scalable, and well-documented applications.
 
-        I have experience with Python, data analysis, and system failure prevention. I also work with technologies such as Kubernetes, MongoDB, and PostgreSQL, always aiming to deliver scalable and well-documented solutions.
+I hold a degree in Systems Analysis and Development from FATEC in Ribeirão Preto. Currently, I work as a Support Analyst at INOV.AI, a company focused on AI-powered legal solutions. On a daily basis, I use Python, PostgreSQL, MongoDB, and other tools to support the team in system monitoring, maintenance, and continuous improvement.
 
-        I am passionate about solving problems, constantly seeking new challenges and opportunities to learn. Outside of work, I enjoy solving Rubik's Cube, participating in programming marathons, and playing the violin.
-      `
+Outside of work, I'm driven by challenges and a constant desire to learn. I enjoy friendly competition, especially through programming contests, where I can push my limits and grow alongside other developers. I also like solving Rubik’s cubes and playing the violin.
+        `
         .split('\n')
         .filter((p) => p.trim() !== '');
     }

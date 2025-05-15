@@ -16,11 +16,9 @@ export class CurriculumComponent implements OnInit {
   constructor(private languageService: LanguageService) {}
 
   ngOnInit() {
-    // Inicializa o PDF conforme o idioma atual
     this.currentLanguage = this.languageService.getLanguage();
     this.updatePdfSrc(this.currentLanguage);
 
-    // Reage às mudanças de idioma
     this.languageService.getLanguageObservable().subscribe((lang) => {
       this.currentLanguage = lang;
       this.updatePdfSrc(lang);
