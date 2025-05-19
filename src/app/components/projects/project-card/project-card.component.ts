@@ -71,12 +71,21 @@ Este é meu site pessoal desenvolvido com Angular e Tailwind. Ele serve para con
       link: 'https://github.com/Ja1zinh0/Angular-portifolio',
     },
     {
-      title: 'Projeto em Construção',
-      short_description: 'Este projeto ainda está sendo desenvolvido.',
-      content:
-        'Este projeto ainda está em construção. Em breve, mais detalhes serão adicionados.',
-      technologies: ['Em breve'],
-      link: '',
+      title: 'AgendaTelefonica',
+      short_description:
+        'Este projeto está sendo desenvolvido e tem como objetivo estudar Java Spring e suas tecnologias. ',
+      content: `## Este projeto ainda está em construção.
+
+        ### Sobre o projeto
+        Este é um projeto de back-end construído com Java + Spring Boot que simula uma agenda telefônica. Ele inclui desde o desenho do banco de dados até a criação de entidades, migrations, rotas da API e toda a infraestrutura necessária para um back-end funcional e escalável.
+
+        O projeto ainda está em desenvolvimento. Atualmente o projeto consta com o banco de dados, as rotas da api, entidades, controllers, services, migrations.
+        
+        `,
+      technologies: [
+        'Java, Spring Boot, Flyway, Hibernate, JPA, Docker, PostgreSQL',
+      ],
+      link: 'https://github.com/joaocarlos-dev/AgendaTelefonica',
     },
     {
       title: 'Projeto em Construção',
