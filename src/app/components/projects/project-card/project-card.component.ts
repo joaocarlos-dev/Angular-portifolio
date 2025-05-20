@@ -77,10 +77,7 @@ Este é meu site pessoal desenvolvido com Angular e Tailwind. Ele serve para con
       content: `## Este projeto ainda está em construção.
 
         ### Sobre o projeto
-        Este é um projeto de back-end construído com Java + Spring Boot que simula uma agenda telefônica. Ele inclui desde o desenho do banco de dados até a criação de entidades, migrations, rotas da API e toda a infraestrutura necessária para um back-end funcional e escalável.
-
-        O projeto ainda está em desenvolvimento. Atualmente o projeto consta com o banco de dados, as rotas da api, entidades, controllers, services, migrations.
-        
+        Este é um projeto de back-end construído com Java + Spring Boot para estudo que simula uma agenda telefônica. Ele inclui desde o desenho do banco de dados até a criação de entidades, migrations, rotas da API e toda a infraestrutura necessária para um back-end funcional e escalável.
         `,
       technologies: [
         'Java, Spring Boot, Flyway, Hibernate, JPA, Docker, PostgreSQL',
@@ -128,13 +125,19 @@ To create an online space where recruiters, colleagues or anyone interested can 
       link: 'https://github.com/Ja1zinh0/Angular-portifolio',
     },
     {
-      title: 'Project in Progress',
-      short_description: 'This project is still under development.',
-      content:
-        'This project is still in progress. More details will be added soon.',
-      technologies: ['Soon'],
-      link: '',
+      title: 'PhoneBook',
+      short_description:
+        'This project is under development and aims to study Java Spring and its related technologies.',
+      content: `## This project is still under construction.
+    
+    ### About the project
+    This is a back-end project built with Java + Spring Boot for learning purposes, simulating a phone book system. It covers everything from database design to entity creation, migrations, API routes, and the full infrastructure required for a functional and scalable back-end.`,
+      technologies: [
+        'Java, Spring Boot, Flyway, Hibernate, JPA, Docker, PostgreSQL',
+      ],
+      link: 'https://github.com/joaocarlos-dev/AgendaTelefonica',
     },
+
     {
       title: 'Project in Progress',
       short_description: 'This project is still under development.',
