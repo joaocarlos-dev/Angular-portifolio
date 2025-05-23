@@ -39,7 +39,7 @@ export class ExperienceCardComponent {
       content: `Atuei na manutenção da infraestrutura da empresa, incluindo máquinas, 
       servidores e gerenciamento de domínio e GPOs. Automatizei relatórios empresariais 
       utilizando Python e Selenium para apoiar a tomada de decisão.`,
-      technologies: ['Python', 'Selenium', 'Angular', 'Windows Server'],
+      technologies: ['Python', 'Selenium', 'Windows Server'],
       isOpen: false,
     },
   ];
@@ -72,7 +72,7 @@ export class ExperienceCardComponent {
       content: `I was responsible for maintaining the company’s infrastructure, including workstations, 
       servers, domain management, and GPO configurations. I automated business reports using 
       Python and Selenium to support decision-making processes.`,
-      technologies: ['Python', 'Selenium', 'Angular', 'Windows Server'],
+      technologies: ['Python', 'Selenium', 'Windows Server'],
       isOpen: false,
     },
   ];
