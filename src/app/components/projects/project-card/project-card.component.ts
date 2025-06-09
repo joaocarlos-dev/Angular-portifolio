@@ -2,13 +2,7 @@ import { Component } from '@angular/core';
 import { LanguageService } from '../../../services/language.service';
 import { CommonModule, NgFor } from '@angular/common';
 
-import {
-  trigger,
-  transition,
-  style,
-  animate,
-  state,
-} from '@angular/animations';
+import { trigger, transition, style, animate } from '@angular/animations';
 
 import { HostListener } from '@angular/core';
 
@@ -66,23 +60,45 @@ Este é meu site pessoal desenvolvido com Angular e Tailwind. Ele serve para con
 - Angular para a estrutura do frontend
 - TailwindCSS para estilização
 - TypeScript como linguagem principal
-    `,
+      `,
       technologies: ['Angular', 'Tailwind', 'HTML', 'TypeScript'],
       link: 'https://github.com/Ja1zinh0/Angular-portifolio',
     },
     {
-      title: 'AgendaTelefonica',
+      title: 'AlgVis',
       short_description:
-        'Este projeto está sendo desenvolvido e tem como objetivo estudar Java Spring e suas tecnologias. ',
-      content: `## Este projeto ainda está em construção.
+        'Projeto fullstack para visualização de algoritmos de estruturas de dados.',
+      content: `
+## Sobre o Projeto
 
-        ### Sobre o projeto
-        Este é um projeto de back-end construído com Java + Spring Boot para estudo que simula uma agenda telefônica. Ele inclui desde o desenho do banco de dados até a criação de entidades, migrations, rotas da API e toda a infraestrutura necessária para um back-end funcional e escalável.
-        `,
+O **AlgVis** é um site educacional desenvolvido com foco em ensinar algoritmos e estruturas de dados de forma visual. Ele permite ao usuário selecionar algoritmos como Bubble Sort, Quick Sort e ver passo a passo como eles se comportam através de animações.
+
+### Funcionalidades
+
+- Visualização animada de algoritmos de ordenação
+- Geração de números aleatórios a cada execução
+- Navegação entre algoritmos por categorias
+- Design responsivo e intuitivo
+- Integração entre backend e frontend para controle da execução
+
+### Tecnologias Utilizadas
+
+- **Frontend:** React, Next.js, TypeScript, TailwindCSS
+- **Backend:** Python, FastAPI
+
+### Objetivo
+
+Auxiliar estudantes e desenvolvedores iniciantes a compreenderem melhor os algoritmos clássicos através de uma experiência visual e interativa.
+      `,
       technologies: [
-        'Java, Spring Boot, Flyway, Hibernate, JPA, Docker, PostgreSQL',
+        'React',
+        'Next.js',
+        'TypeScript',
+        'TailwindCSS',
+        'Python',
+        'FastAPI',
       ],
-      link: 'https://github.com/joaocarlos-dev/AgendaTelefonica',
+      link: 'https://github.com/joaocarlos-dev/AlgVis',
     },
     {
       title: 'Projeto em Construção',
@@ -116,28 +132,46 @@ This is my personal website built with Angular and Tailwind. It serves as a port
 - Angular for frontend structure
 - TailwindCSS for styling
 - TypeScript as the main language
-
-### Purpose
-
-To create an online space where recruiters, colleagues or anyone interested can check out my work and ongoing projects.
       `,
       technologies: ['Angular', 'Tailwind', 'HTML', 'TypeScript'],
       link: 'https://github.com/Ja1zinh0/Angular-portifolio',
     },
     {
-      title: 'PhoneBook',
+      title: 'AlgVis',
       short_description:
-        'This project is under development and aims to study Java Spring and its related technologies.',
-      content: `## This project is still under construction.
-    
-    ### About the project
-    This is a back-end project built with Java + Spring Boot for learning purposes, simulating a phone book system. It covers everything from database design to entity creation, migrations, API routes, and the full infrastructure required for a functional and scalable back-end.`,
-      technologies: [
-        'Java, Spring Boot, Flyway, Hibernate, JPA, Docker, PostgreSQL',
-      ],
-      link: 'https://github.com/joaocarlos-dev/AgendaTelefonica',
-    },
+        'Fullstack project for visualizing data structures and algorithms.',
+      content: `
+## About the Project
 
+**AlgVis** is an educational website designed to teach data structures and algorithms through visual interaction. It allows users to explore how sorting algorithms like Bubble Sort and Quick Sort behave step-by-step via animations.
+
+### Features
+
+- Animated visualization of sorting algorithms
+- Random number generation on each run
+- Navigation between algorithms by category
+- Responsive and intuitive interface
+- Frontend-backend integration for controlling execution
+
+### Technologies Used
+
+- **Frontend:** React, Next.js, TypeScript, TailwindCSS
+- **Backend:** Python, FastAPI
+
+### Purpose
+
+To help students and junior developers better understand classical algorithms through an interactive and visual experience.
+      `,
+      technologies: [
+        'React',
+        'Next.js',
+        'TypeScript',
+        'TailwindCSS',
+        'Python',
+        'FastAPI',
+      ],
+      link: 'https://github.com/joaocarlos-dev/AlgVis',
+    },
     {
       title: 'Project in Progress',
       short_description: 'This project is still under development.',
@@ -157,10 +191,8 @@ To create an online space where recruiters, colleagues or anyone interested can 
     return this.languageService.isPortuguese() ? this.ptCards : this.enCards;
   }
 
-  // Adicione esta variável para controle do modal
   isModalOpen = false;
 
-  // Modifique os métodos de abertura/fechamento
   openModal(index: number) {
     this.selectedCard = index;
     this.isModalOpen = true;
