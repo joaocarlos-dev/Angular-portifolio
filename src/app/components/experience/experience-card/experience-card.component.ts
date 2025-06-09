@@ -13,7 +13,7 @@ export class ExperienceCardComponent {
   ptCards = [
     {
       title: 'Analista de Suporte',
-      time: '09/2024 - Atual',
+      time: '09/2024 - 05/2025',
       company: 'INOV.AI',
       content: `Atuo na equipe de suporte e desenvolvimento em uma lawtech que entrega 
       soluções com Inteligência Artificial no setor jurídico. Sou responsável pelo monitoramento 
@@ -47,7 +47,7 @@ export class ExperienceCardComponent {
   enCards = [
     {
       title: 'Support Analyst',
-      time: '09/2024 - Present',
+      time: '09/2024 - 05/2025',
       company: 'INOV.AI',
       content: `I work on the support and development team at a lawtech that delivers 
       Artificial Intelligence solutions in the legal sector. I'm responsible for monitoring 
