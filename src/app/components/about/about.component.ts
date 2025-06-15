@@ -37,7 +37,7 @@ export class AboutComponent implements OnInit, OnDestroy {
     if (this.languageService.isPortuguese()) {
       this.greeting = 'Olá, sou o João!';
       this.paragraphs = `
-Sou um desenvolvedor fullstack com paixão por resolver problemas complexos e criar soluções inteligentes. Atualmente, trabalho com tecnologias modernas como React, Next.js, Python e FastAPI, além de outras ferramentas do ecossistema web e backend.
+Sou um desenvolvedor fullstack com paixão por resolver problemas complexos e criar soluções inteligentes. Atualmente, trabalho com tecnologias modernas como React, Next.Ss, Nest.Js e Node.Js, além de outras ferramentas do ecossistema web e backend.
 
 Formado em Análise e Desenvolvimento de Sistemas pela FATEC de Ribeirão Preto, busco constantemente evoluir como profissional, escrevendo código limpo, testável e bem documentado.
 
@@ -48,7 +48,7 @@ Além da minha rotina de estudos e projetos, gosto de encarar desafios técnicos
     } else {
       this.greeting = `Hello, I'm João!`;
       this.paragraphs = `
-I'm a fullstack developer passionate about solving complex problems and building smart solutions. I currently work with modern technologies such as React, Next.js, Python, and FastAPI, along with other tools from the web and backend ecosystems.
+I'm a fullstack developer passionate about solving complex problems and building smart solutions. I currently work with modern technologies such as React, Next.js, Nest.Js and Node.Js, along with other tools from the web and backend ecosystems.
 
 Graduated in Systems Analysis and Development from FATEC in Ribeirão Preto, I'm always seeking to grow professionally by writing clean, testable, and well-documented code.
 
