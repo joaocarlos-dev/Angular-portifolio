@@ -65,6 +65,41 @@ Este é meu site pessoal desenvolvido com Angular e Tailwind. Ele serve para con
       link: 'https://github.com/Ja1zinh0/Angular-portifolio',
     },
     {
+      title: 'The Blog',
+      short_description:
+        'Blog pessoal fullstack desenvolvido com foco educacional.',
+      content: `
+## Sobre o Projeto
+
+**The Blog** é um blog pessoal desenvolvido como plataforma de aprendizado fullstack. O projeto visa explorar tecnologias modernas e práticas de desenvolvimento como autenticação, CRUD e testes automatizados.
+
+### Funcionalidades Planejadas
+
+- Autenticação de usuários
+- Cadastro, edição e exclusão de posts (CRUD)
+- Página individual para cada post
+- Design responsivo
+- Testes automatizados com Vitest e Playwright
+
+### Tecnologias Utilizadas
+
+- **Frontend:** React, Next.js
+- **Backend:** NestJS, Node.js
+- **Banco de Dados:** SQLite
+- **Testes:** Vitest, Playwright
+      `,
+      technologies: [
+        'React',
+        'Next.js',
+        'NestJS',
+        'Node.js',
+        'SQLite',
+        'Vitest',
+        'Playwright',
+      ],
+      link: 'https://github.com/joaocarlos-dev/blog-project',
+    },
+    {
       title: 'AlgVis',
       short_description:
         'Projeto fullstack para visualização de algoritmos de estruturas de dados.',
@@ -100,6 +135,7 @@ Auxiliar estudantes e desenvolvedores iniciantes a compreenderem melhor os algor
       ],
       link: 'https://github.com/joaocarlos-dev/AlgVis',
     },
+
     {
       title: 'Projeto em Construção',
       short_description: 'Este projeto ainda está sendo desenvolvido.',
@@ -136,6 +172,7 @@ This is my personal website built with Angular and Tailwind. It serves as a port
       technologies: ['Angular', 'Tailwind', 'HTML', 'TypeScript'],
       link: 'https://github.com/Ja1zinh0/Angular-portifolio',
     },
+
     {
       title: 'AlgVis',
       short_description:
