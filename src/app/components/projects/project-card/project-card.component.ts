@@ -67,38 +67,45 @@ Este é meu site pessoal desenvolvido com Angular e Tailwind. Ele serve para con
     {
       title: 'The Blog',
       short_description:
-        'Blog pessoal fullstack desenvolvido com foco educacional.',
+        'Blog fullstack pessoal focado em aprendizado e boas práticas.',
       content: `
 ## Sobre o Projeto
 
-**The Blog** é um blog pessoal desenvolvido como plataforma de aprendizado fullstack. O projeto visa explorar tecnologias modernas e práticas de desenvolvimento como autenticação, CRUD e testes automatizados.
+**The Blog** é um projeto fullstack pessoal desenvolvido com o objetivo de aprofundar o conhecimento em tecnologias modernas de desenvolvimento web. Foi criado do zero como um ambiente de estudo e experimentação, aplicando práticas avançadas tanto no frontend quanto no backend.
 
-### Funcionalidades Planejadas
+O foco principal está na construção de uma aplicação real com autenticação, sistema completo de CRUDe design responsivo.
 
-- Autenticação de usuários
-- Cadastro, edição e exclusão de posts (CRUD)
-- Página individual para cada post
-- Design responsivo
-- Testes automatizados com Vitest e Playwright
+### Funcionalidades
+
+- Autenticação e autorização de usuários
+- CRUD completo para gerenciamento de posts (criação, edição, exclusão e listagem)
+- Página individual para cada post com data e autor
+- Painel de administração exclusivo para usuários autenticados
+- Integração com banco de dados relacional
+- Estilização moderna com TailwindCSS
+- Design responsivo adaptado para diferentes dispositivos
 
 ### Tecnologias Utilizadas
 
-- **Frontend:** React, Next.js
-- **Backend:** NestJS, Node.js
+- **Frontend:** React, Next.js, TailwindCSS
+- **Backend:** Node.js, TypeScript
 - **Banco de Dados:** SQLite
-- **Testes:** Vitest, Playwright
-      `,
+
+### Objetivo
+
+Consolidar conhecimentos em desenvolvimento fullstack moderno, com ênfase em escalabilidade, organização de código e práticas profissionais de desenvolvimento web.
+  `,
       technologies: [
         'React',
         'Next.js',
-        'NestJS',
+        'TailwindCSS',
         'Node.js',
         'SQLite',
-        'Vitest',
-        'Playwright',
+        'TypeScript',
       ],
       link: 'https://github.com/joaocarlos-dev/blog-project',
     },
+
     {
       title: 'AlgVis',
       short_description:
@@ -134,15 +141,6 @@ Auxiliar estudantes e desenvolvedores iniciantes a compreenderem melhor os algor
         'FastAPI',
       ],
       link: 'https://github.com/joaocarlos-dev/AlgVis',
-    },
-
-    {
-      title: 'Projeto em Construção',
-      short_description: 'Este projeto ainda está sendo desenvolvido.',
-      content:
-        'Este projeto ainda está em construção. Em breve, mais detalhes serão adicionados.',
-      technologies: ['Em breve'],
-      link: '',
     },
   ];
 
@@ -210,12 +208,45 @@ To help students and junior developers better understand classical algorithms th
       link: 'https://github.com/joaocarlos-dev/AlgVis',
     },
     {
-      title: 'Project in Progress',
-      short_description: 'This project is still under development.',
-      content:
-        'This project is still in progress. More details will be added soon.',
-      technologies: ['Soon'],
-      link: '',
+      title: 'The Blog',
+      short_description:
+        'A fullstack personal blog focused on learning and best practices.',
+      content: `
+## About the Project
+
+**The Blog** is a fullstack personal project developed as a learning platform for modern web technologies. It was built from scratch to serve as a space for experimentation and practice, applying professional development patterns on both frontend and backend.
+
+The main focus is to simulate a real-world application with user authentication, full CRUD operations and responsive design.
+
+### Features
+
+- User authentication and authorization
+- Full CRUD system for managing blog posts (create, edit, delete, list)
+- Individual page for each post with date and author
+- Admin dashboard accessible only to authenticated users
+- Integration with relational database
+- Responsive and modern UI using TailwindCSS
+- Clean, scalable, and well-organized codebase
+
+### Technologies Used
+
+- **Frontend:** React, Next.js, TailwindCSS
+- **Backend:** Node.js, TypeScript
+- **Database:** SQLite
+
+### Purpose
+
+To strengthen fullstack development skills with a focus on scalability, clean code, and modern development practices aligned with real-world scenarios.
+  `,
+      technologies: [
+        'React',
+        'Next.js',
+        'TailwindCSS',
+        'NestJS',
+        'SQLite',
+        'TypeScript',
+      ],
+      link: 'https://github.com/joaocarlos-dev/blog-project',
     },
   ];
 
